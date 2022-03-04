@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Todos from '../components/todo.js'
+import Counter from '../components/counter.js'
 
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
           <code className={styles.code}>pages/index.js</code>
         </p>
 
-        <Todos />
+        <Counter />
 
         {/* <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>

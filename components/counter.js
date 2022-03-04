@@ -1,21 +1,26 @@
 import React, {useState} from "react";
+import styles from '../styles/Home.module.css'
+
 
 const blah = 'blahblahblah'
 
-const Todos = () => {
+const Counter = () => {
 
     // Declare a new state variable, which we'll call "count"
     const [count, setCount] = useState(0);
 
     return (
-        <div>
-            <p>You clicked {count} times</p>
+        <div className={styles.container}>
+            <p>The count is {count}</p>
             <button onClick={() => setCount(count + 1)}>
-                Click me
+                Add
+            </button>
+            <button onClick={() => setCount(count - 1)}>
+                Subtract
             </button>
             {/* <p>{blah}</p> */}
         </div>
     )
 }
 
-export default Todos
+export default Counter
