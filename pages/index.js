@@ -14,11 +14,11 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Hi
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
+          This is{' '}
           <code className={styles.code}>pages/index.js</code>
         </p>
 
