@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState} from 'react';
 import styles from '../styles/Home.module.css'
 
 
@@ -11,7 +11,8 @@ const Counter = () => {
 
     return (
         <div className={styles.container}>
-            <p>The count is {count}</p>
+            <h2>Check out this counter</h2>
+            <h4>The count is {count}</h4>
             <button onClick={() => setCount(count + 1)}>
                 Add
             </button>
