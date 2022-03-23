@@ -2,8 +2,31 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Counter from '../components/counter.js'
+import {useEffect} from 'react'
+
+///reviews/search.json?query=big&opening-date=1980-01-01:1990-01-01
+//API KEY joZEGXraTg5TwCzoVbILHCL6F0e2C9vG
+
 
 export default function Home() {
+  //const url = "https://api.adviceslip.com/advice";
+  const url = "https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=godfather&api-key=joZEGXraTg5TwCzoVbILHCL6F0e2C9vG"
+
+  useEffect(() => {
+
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url);
+        const json = await response.json();
+        console.log(json);
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -22,7 +45,6 @@ export default function Home() {
           <code className={styles.code}>pages/index.js</code>
         </p>
 
-        <Counter />
 
         {/* <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
