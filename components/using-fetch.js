@@ -4,8 +4,6 @@ import styles from '../styles/Home.module.css'
 ///reviews/search.json?query=big&opening-date=1980-01-01:1990-01-01
 //API KEY joZEGXraTg5TwCzoVbILHCL6F0e2C9vG
 
-//https://www.codingdeft.com/posts/react-fetch-data-api/#fetching-data-in-react-using-async-await
-
 const url = "https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=godfather&api-key=joZEGXraTg5TwCzoVbILHCL6F0e2C9vG"
 
 const UsingFetch = () => {
@@ -30,15 +28,17 @@ const UsingFetch = () => {
   const movieList = movies.map((movieItem, index) => <li key={index}>{movieItem.display_title}</li>);
 
   return (
-    <div>
+    <section>
       <ul>{movieList}</ul>
       <p>{JSON.stringify(movies)}</p>
-    </div>
+    </section>
   )
 }
 
 export default UsingFetch
 
+
+//https://www.codingdeft.com/posts/react-fetch-data-api/#fetching-data-in-react-using-async-await
 
 /* const UsingFetch = () => {
   const [users, setUsers] = useState([])
