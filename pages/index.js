@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Counter from '../components/counter.js'
-import {useEffect} from 'react'
 import UsingFetch from '../components/using-fetch.js'
 
 ///reviews/search.json?query=big&opening-date=1980-01-01:1990-01-01

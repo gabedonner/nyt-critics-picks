@@ -25,12 +25,12 @@ const UsingFetch = () => {
     fetchData()
   }, [])
 
-  const movieList = movies.map((movieItem, index) => <li key={index}>{movieItem.display_title}</li>);
+  const movieList = movies.map((movieItem, index) => <p key={index}>{movieItem.display_title}</p>);
 
   return (
     <section>
-      <ul>{movieList}</ul>
-      <p>{JSON.stringify(movies)}</p>
+      <div>{movieList}</div>
+      {/*<p>{JSON.stringify(movies)}</p>*/}    
     </section>
   )
 }
