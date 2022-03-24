@@ -17,8 +17,9 @@ const UsingFetch = () => {
         return response.json()
       })
       .then(data => {
-        setMovies(data.results)
+        console.log(data)
         console.log(data.results)
+        setMovies(data.results)
       })
   }
 

@@ -13,7 +13,9 @@ export default function Home() {
   //const url = "https://api.adviceslip.com/advice";
   const url = "https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=godfather&api-key=joZEGXraTg5TwCzoVbILHCL6F0e2C9vG"
 
-  useEffect(() => {
+  
+  //async fetch
+  /* useEffect(() => {
 
     const fetchData = async () => {
       try {
@@ -26,7 +28,7 @@ export default function Home() {
     };
 
     fetchData();
-  }, []);
+  }, []); */
 
   return (
     <div className={styles.container}>
@@ -40,10 +42,8 @@ export default function Home() {
         <h1 className={styles.title}>
           NYT Movie Picks
         </h1>
-
         <p className={styles.description}>
-          This is{' '}
-          <code className={styles.code}>pages/index.js</code>
+          What NYT thinks is the best
         </p>
         
         <UsingFetch />
