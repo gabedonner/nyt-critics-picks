@@ -4,6 +4,9 @@ import styles from '../styles/Home.module.css'
 ///reviews/search.json?query=big&opening-date=1980-01-01:1990-01-01
 //API KEY joZEGXraTg5TwCzoVbILHCL6F0e2C9vG
 
+//how to do a "load more" button w/ api call
+//https://www.cluemediator.com/load-more-pagination-in-react
+
 const url = "https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=godfather&api-key=joZEGXraTg5TwCzoVbILHCL6F0e2C9vG"
 
 const UsingFetch = () => {
