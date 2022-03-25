@@ -7,6 +7,21 @@ import styles from '../styles/Home.module.css'
 //how to do a "load more" button w/ api call
 //https://www.cluemediator.com/load-more-pagination-in-react
 
+//how to spread props
+//https://youtu.be/b0IZo2Aho9Y?t=412
+
+//for example:
+
+/* const data = {
+  id: 23,
+  name: 'Jeff',
+  age: 19,
+}
+
+return (
+  <User {...data} />
+) */
+
 const url = "https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=godfather&api-key=joZEGXraTg5TwCzoVbILHCL6F0e2C9vG"
 
 const UsingFetch = () => {
