@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 ///reviews/search.json?query=big&opening-date=1980-01-01:1990-01-01
@@ -54,8 +55,10 @@ const UsingFetch = () => {
       {/*<p>{JSON.stringify(movies)}</p>*/}    
       {movies.map((movie, index) => (
         <div key={index}>
+          <Image src={movie.multimedia === null ? "/vercel.svg" : movie.multimedia.src} alt="Vercel Logo" width={300} height={200} />
           <h4>{movie.display_title}</h4>
           <i>{movie.headline}</i>
+          <p>{movie.opening_date}</p>
         </div>
       ))}
     </section>
