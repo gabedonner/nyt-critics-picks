@@ -55,7 +55,7 @@ const UsingFetch = () => {
       {/*<p>{JSON.stringify(movies)}</p>*/}    
       {movies.map((movie, index) => (
         <div key={index}>
-          <Image src={movie.multimedia === null ? "/vercel.svg" : movie.multimedia.src} alt="Vercel Logo" width={300} height={200} />
+          <Image src={movie.multimedia === null ? "/vercel.svg" : movie.multimedia.src} alt="Critic's Pick" width={300} height={200} />
           <h4>{movie.display_title}</h4>
           <i>{movie.headline}</i>
           <p>{movie.opening_date}</p>
