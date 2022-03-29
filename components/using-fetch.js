@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Box from '@mui/material/Box';
+import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
+import Button from '@mui/material/Button'
 
 ///reviews/search.json?query=big&opening-date=1980-01-01:1990-01-01
 //API KEY joZEGXraTg5TwCzoVbILHCL6F0e2C9vG
@@ -57,11 +58,15 @@ const UsingFetch = () => {
                 <h4>{movie.display_title}</h4>
                 <i>{movie.headline}</i>
                 <p>{movie.publication_date}</p>
-                <a href={movie.link.url}>link to article</a>
+                <a href={movie.link.url}>link to article &#8594;</a>
               </Box>
           </Grid>
         ))}
       </Grid>
+      <Box sx={{p: 5, textAlign: 'center'}}>
+        <Button variant="contained">load more</Button>
+      </Box>
+      
     </section>
   )
 }
