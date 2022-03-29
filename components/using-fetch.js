@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Box from '@mui/material/Box';
 
 ///reviews/search.json?query=big&opening-date=1980-01-01:1990-01-01
 //API KEY joZEGXraTg5TwCzoVbILHCL6F0e2C9vG
@@ -23,7 +24,7 @@ return (
   <User {...data} />
 ) */
 
-const url = "https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=godfather&api-key=joZEGXraTg5TwCzoVbILHCL6F0e2C9vG"
+const url = "https://api.nytimes.com/svc/movies/v2/reviews/picks.json?query=&api-key=joZEGXraTg5TwCzoVbILHCL6F0e2C9vG"
 
 const UsingFetch = () => {
   const [movies, setMovies] = useState([])
@@ -54,11 +55,13 @@ const UsingFetch = () => {
       {/* <div>{movieList}</div> */}
       {/*<p>{JSON.stringify(movies)}</p>*/}    
       {movies.map((movie, index) => (
+        
         <div key={index}>
           <Image src={movie.multimedia === null ? "/vercel.svg" : movie.multimedia.src} alt="Critic's Pick" width={300} height={200} />
           <h4>{movie.display_title}</h4>
           <i>{movie.headline}</i>
           <p>{movie.opening_date}</p>
+          <a href={movie.link.url}>link to article</a>
         </div>
       ))}
     </section>
