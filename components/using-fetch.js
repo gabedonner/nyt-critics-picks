@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid'
 
 ///reviews/search.json?query=big&opening-date=1980-01-01:1990-01-01
 //API KEY joZEGXraTg5TwCzoVbILHCL6F0e2C9vG
@@ -53,17 +54,18 @@ const UsingFetch = () => {
   return (
     <section>
       {/* <div>{movieList}</div> */}
-      {/*<p>{JSON.stringify(movies)}</p>*/}    
-      {movies.map((movie, index) => (
-        
-        <div key={index}>
-          <Image src={movie.multimedia === null ? "/vercel.svg" : movie.multimedia.src} alt="Critic's Pick" width={300} height={200} />
-          <h4>{movie.display_title}</h4>
-          <i>{movie.headline}</i>
-          <p>{movie.opening_date}</p>
-          <a href={movie.link.url}>link to article</a>
-        </div>
-      ))}
+      {/*<p>{JSON.stringify(movies)}</p>*/}   
+      <Grid container spacing={2}> 
+        {movies.map((movie, index) => (
+          <Grid item xs={4} key={index}>
+              <Image src={movie.multimedia === null ? "/vercel.svg" : movie.multimedia.src} alt="Critic's Pick" width={300} height={200} />
+              <h4>{movie.display_title}</h4>
+              <i>{movie.headline}</i>
+              <p>{movie.opening_date}</p>
+              <a href={movie.link.url}>link to article</a>
+          </Grid>
+        ))}
+      </Grid>
     </section>
   )
 }

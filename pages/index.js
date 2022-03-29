@@ -9,8 +9,6 @@ import UsingFetch from '../components/using-fetch.js'
 
 export default function Home() {
   //const url = "https://api.adviceslip.com/advice";
-  const url = "https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=godfather&api-key=joZEGXraTg5TwCzoVbILHCL6F0e2C9vG"
-
   
   //async fetch
   /* useEffect(() => {
