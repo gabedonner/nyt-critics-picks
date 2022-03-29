@@ -47,22 +47,18 @@ const UsingFetch = () => {
   }, [])
 
 
-  //mapping example
-  //const movieList = movies.map((movieItem, index) => <p key={index}>{movieItem.display_title}</p>);
-
-
   return (
-    <section>
-      {/* <div>{movieList}</div> */}
-      {/*<p>{JSON.stringify(movies)}</p>*/}   
+    <section> 
       <Grid container spacing={2}> 
         {movies.map((movie, index) => (
-          <Grid item sx ={{mb: 6, pr: 10}} xs={6} md={4} key={index}>
+          <Grid item sx ={{mb: 6}} xs={6} md={4} key={index}>
               <Image src={movie.multimedia === null ? "/vercel.svg" : movie.multimedia.src} alt="Critic's Pick" width={300} height={200} />
-              <h4>{movie.display_title}</h4>
-              <i>{movie.headline}</i>
-              <p>{movie.publication_date}</p>
-              <a href={movie.link.url}>link to article</a>
+              <Box sx={{pr: 10}}>
+                <h4>{movie.display_title}</h4>
+                <i>{movie.headline}</i>
+                <p>{movie.publication_date}</p>
+                <a href={movie.link.url}>link to article</a>
+              </Box>
           </Grid>
         ))}
       </Grid>
