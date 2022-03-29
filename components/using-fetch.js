@@ -51,7 +51,7 @@ const UsingFetch = () => {
     <section> 
       <Grid container sx={{mt: 3}} spacing={2}> 
         {movies.map((movie, index) => (
-          <Grid item sx ={{mb: 6}} xs={6} md={4} key={index}>
+          <Grid item sx ={{pb: 6, border: "1px solid grey"}} xs={6} md={4} key={index}>
               <Image src={movie.multimedia === null ? "/vercel.svg" : movie.multimedia.src} alt="Critic's Pick" width={300} height={200} />
               <Box sx={{pr: 10}}>
                 <h4>{movie.display_title}</h4>
