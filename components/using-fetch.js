@@ -5,6 +5,8 @@ import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
 import Link from '@mui/material/Link'
+import Typography from '@mui/material/Typography'
+
 
 ///reviews/search.json?query=big&opening-date=1980-01-01:1990-01-01
 //API KEY joZEGXraTg5TwCzoVbILHCL6F0e2C9vG
@@ -36,8 +38,10 @@ const url = "https://api.nytimes.com/svc/movies/v2/reviews/picks.json?query=&api
 
 const UsingFetch = () => {
   const [movies, setMovies] = useState([])
+  const [loading, setLoading] = useState(false);
 
   const fetchData = () => {
+    setLoading(true);
     fetch(url)
       .then(response => {
         return response.json()
@@ -46,6 +50,7 @@ const UsingFetch = () => {
         console.log(data)
         console.log(data.results)
         setMovies(data.results)
+        setLoading(false);
       })
   }
 
@@ -61,9 +66,9 @@ const UsingFetch = () => {
         {movies.map((movie, index) => (
           <Grid item sx ={{border: "1px solid grey", '&:hover': {backgroundColor: "white"}}} xs={6} md={4} key={index}>
             <Link href={movie.link.url} sx={{display: 'block', p: 2, width: '100%', height: '100%'}} underline="hover" color="inherit" target="_blank" rel="noopener">
+                <Typography><h3>{movie.display_title === "" ? "[No title]" : movie.display_title }</h3></Typography>
                 <Image src={movie.multimedia === null ? "/vercel.svg" : movie.multimedia.src} alt="Critic's Pick" width={300} height={200} />
-                <Box sx={{pr: 5}}>
-                  <h4>{movie.display_title}</h4>
+                <Box sx={{pr: 5, pt: 2}}>
                   <i>{movie.summary_short}</i>
                   <p>{movie.publication_date}</p>
                   {/* <a href={movie.link.url}>link to article &#8594;</a> */}
