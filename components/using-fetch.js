@@ -56,11 +56,11 @@ const UsingFetch = () => {
 
   return (
     <section> 
-      <Grid container sx={{mt: 3, border: "1px solid grey"}} spacing={2}> 
+      <Grid container sx={{mt: 3, border: "1px solid grey"}} spacing={0}> 
 
         {movies.map((movie, index) => (
           <Grid item sx ={{border: "1px solid grey", '&:hover': {backgroundColor: "white"}}} xs={6} md={4} key={index}>
-            <Link href={movie.link.url} sx={{display: 'block', pb: 2, width: '100%', height: '100%'}} underline="hover" color="inherit" target="_blank" rel="noopener">
+            <Link href={movie.link.url} sx={{display: 'block', p: 2, width: '100%', height: '100%'}} underline="hover" color="inherit" target="_blank" rel="noopener">
                 <Image src={movie.multimedia === null ? "/vercel.svg" : movie.multimedia.src} alt="Critic's Pick" width={300} height={200} />
                 <Box sx={{pr: 5}}>
                   <h4>{movie.display_title}</h4>
