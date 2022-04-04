@@ -43,8 +43,8 @@ export default function Home() {
           The best movies, according to the New York Times
         </p>
         
-        {/* <UsingFetch /> */}
-        <LoadMore />
+        <UsingFetch />
+        {/* <LoadMore /> */}
 
       </main>
 

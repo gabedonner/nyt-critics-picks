@@ -21,6 +21,7 @@ function LoadMore() {
         .then(res => {
           setTotalPages(res.total_pages);
           setUserList([...userList, ...res.data]);
+          console.log(res);
           setLoading(false);
         });
     }
