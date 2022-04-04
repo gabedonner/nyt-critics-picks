@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography'
 
 //how to do a "load more" button w/ api call
 //https://www.cluemediator.com/load-more-pagination-in-react
+//https://medium.com/swlh/a-comprehensive-guide-to-load-more-button-and-infinite-scrolling-in-react-js-bd88edf74d5a
 
 //how to spread props
 //https://youtu.be/b0IZo2Aho9Y?t=412
@@ -61,28 +62,25 @@ const UsingFetch = () => {
 
   return (
     <section> 
-      <Grid container sx={{mt: 3, border: "1px solid grey"}} spacing={0}> 
-
+      <Grid container sx={{mt: 6, border: "1px solid grey"}} spacing={0}> 
         {movies.map((movie, index) => (
-          <Grid item sx ={{border: "1px solid grey", '&:hover': {backgroundColor: "white"}}} xs={6} md={4} key={index}>
-            <Link href={movie.link.url} sx={{display: 'block', p: 2, width: '100%', height: '100%'}} underline="hover" color="inherit" target="_blank" rel="noopener">
-                <Typography><h3>{movie.display_title === "" ? "[No title]" : movie.display_title }</h3></Typography>
-                <Image src={movie.multimedia === null ? "/vercel.svg" : movie.multimedia.src} alt="Critic's Pick" width={300} height={200} />
+          <Grid item sx={{border: "1px solid grey", '&:hover': {backgroundColor: "white"}}} xs={12} sm={6} md={4} lg={4} key={index}>
+            <Link href={movie.link.url} sx={{display: 'block', px: 2, pb: 2, width: '100%', height: '100%'}} underline="none" color="inherit" target="_blank" rel="noopener noreferrer">
+                <Typography><h3>{movie.display_title === "" ? "[No title found]" : movie.display_title }</h3></Typography>
+                <Image src={movie.multimedia === null ? "/vercel.svg" : movie.multimedia.src} alt="Critic's Pick" width={600} height={400} sx={{imageRendering: 'crisp-edges'}} />
                 <Box sx={{pr: 5, pt: 2}}>
                   <i>{movie.summary_short}</i>
                   <p>{movie.publication_date}</p>
+                  {/* <p>{index + 1}</p> */}
                   {/* <a href={movie.link.url}>link to article &#8594;</a> */}
                 </Box>
               </Link>
           </Grid>
         ))}
-
       </Grid>
-      
       <Box sx={{p: 5, textAlign: 'center'}}>
         <Button variant="contained">load more</Button>
       </Box>
-      
     </section>
   )
 }
