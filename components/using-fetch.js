@@ -53,7 +53,9 @@ const UsingFetch = () => {
       .then(data => {
         console.log(data)
         console.log(data.results)
-        setMovies([...movies, ...data.results])
+        //reduce results to 12 items rather than 20
+        let slicedMovies = data.results.slice(0, 12)
+        setMovies([...movies, ...slicedMovies])
         setLoading(false)
       })
   }
@@ -83,7 +85,7 @@ const UsingFetch = () => {
         ))}
       </Grid>
       <Box sx={{p: 5, textAlign: 'center'}}>
-        <Button variant="contained" onClick={() => setOffsetNum(offsetNum + 20)}>{loading ? 'Loading...' : 'Load More'}</Button>
+        <Button variant="contained" onClick={() => setOffsetNum(offsetNum + 12)}>{loading ? 'Loading...' : 'Load More'}</Button>
       </Box>
     </section>
   )
