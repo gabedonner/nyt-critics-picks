@@ -4,10 +4,6 @@ import styles from '../styles/Home.module.css'
 import UsingFetch from '../components/using-fetch.js'
 import LoadMore from '../components/load-more'
 
-///reviews/search.json?query=big&opening-date=1980-01-01:1990-01-01
-//API KEY joZEGXraTg5TwCzoVbILHCL6F0e2C9vG
-
-
 export default function Home() {
   //const url = "https://api.adviceslip.com/advice";
   
