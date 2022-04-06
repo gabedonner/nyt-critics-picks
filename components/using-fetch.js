@@ -34,16 +34,19 @@ return (
 // const API_KEY = "joZEGXraTg5TwCzoVbILHCL6F0e2C9vG"
 // `https://api.nytimes.com/svc/movies/v2/reviews/picks.json?api-key=${API_KEY}&offset=${offsetNum}&order=${movieOrder}&query=${query}`
 
-
-const url = "https://api.nytimes.com/svc/movies/v2/reviews/picks.json?query=&api-key=joZEGXraTg5TwCzoVbILHCL6F0e2C9vG"
-
 const UsingFetch = () => {
+
+  //const url = "https://api.nytimes.com/svc/movies/v2/reviews/picks.json?query=&api-key=joZEGXraTg5TwCzoVbILHCL6F0e2C9vG"
+  const API_KEY = "joZEGXraTg5TwCzoVbILHCL6F0e2C9vG"
+
   const [movies, setMovies] = useState([])
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false)
+  const [offsetNum, setOffsetNum] = useState(0)
+  const [hasMore, setHasMore] = useState()
 
   const fetchData = () => {
-    setLoading(true);
-    fetch(url)
+    setLoading(true)
+    fetch(`https://api.nytimes.com/svc/movies/v2/reviews/picks.json?api-key=${API_KEY}&offset=${offsetNum}`)
       .then(response => {
         return response.json()
       })
@@ -51,7 +54,7 @@ const UsingFetch = () => {
         console.log(data)
         console.log(data.results)
         setMovies(data.results)
-        setLoading(false);
+        setLoading(false)
       })
   }
 
