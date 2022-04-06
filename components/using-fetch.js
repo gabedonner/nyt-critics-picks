@@ -53,14 +53,15 @@ const UsingFetch = () => {
       .then(data => {
         console.log(data)
         console.log(data.results)
-        setMovies(data.results)
+        setMovies([...movies, ...data.results])
         setLoading(false)
       })
   }
 
   useEffect(() => {
     fetchData()
-  }, [])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [offsetNum])
 
 
   return (
@@ -82,7 +83,7 @@ const UsingFetch = () => {
         ))}
       </Grid>
       <Box sx={{p: 5, textAlign: 'center'}}>
-        <Button variant="contained">load more</Button>
+        <Button variant="contained" onClick={() => setOffsetNum(offsetNum + 20)}>{loading ? 'Loading...' : 'Load More'}</Button>
       </Box>
     </section>
   )
