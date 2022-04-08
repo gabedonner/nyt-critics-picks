@@ -70,11 +70,11 @@ const UsingFetch = () => {
     <section> 
       <Grid container sx={{mt: 6, border: "1px solid grey"}} spacing={0}> 
         {movies.map((movie, index) => (
-          <Grid item sx={{border: "1px solid grey", '&:hover': {backgroundColor: "white"}}} xs={12} sm={6} md={4} lg={4} key={index}>
-            <Link href={movie.link.url} sx={{display: 'block', px: 2, pb: 2, width: '100%', height: '100%'}} underline="hover" color="inherit" target="_blank" rel="noopener noreferrer">
-                <h3>{movie.display_title === "" ? "[No title found]" : movie.display_title }</h3>
+          <Grid item sx={{ border: "1px solid grey", '&:hover': {backgroundColor: "white"}}} xs={12} sm={6} md={4} lg={4} key={index}>
+            <Link href={movie.link.url} sx={{display: 'block', px: 2, py: 2, width: '100%', height: '100%'}} underline="hover" color="inherit" target="_blank" rel="noopener noreferrer">
                 <Image src={movie.multimedia === null ? "/vercel.svg" : movie.multimedia.src} alt="Critic's Pick" width={600} height={400} sx={{imageRendering: 'crisp-edges'}} />
                 <Box sx={{pr: 5, pt: 2}}>
+                  <h3>{movie.display_title === "" ? "[No title found]" : movie.display_title }</h3>
                   <i>{movie.summary_short}</i>
                   <p>{movie.publication_date}</p>
                   {/* <p>{index + 1}</p> */}
