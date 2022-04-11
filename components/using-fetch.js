@@ -43,17 +43,18 @@ const UsingFetch = () => {
   const [loading, setLoading] = useState(false)
   const [offsetNum, setOffsetNum] = useState(0)
   const [hasMore, setHasMore] = useState()
+  const [searchQuery, setSearchQuery] = useState('')
 
   const fetchData = () => {
     setLoading(true)
-    fetch(`https://api.nytimes.com/svc/movies/v2/reviews/picks.json?api-key=${API_KEY}&offset=${offsetNum}`)
+    fetch(`https://api.nytimes.com/svc/movies/v2/reviews/picks.json?api-key=${API_KEY}&offset=${offsetNum}&query=${searchQuery}`)
       .then(response => {
         return response.json()
       })
       .then(data => {
         console.log(data)
         console.log(data.results)
-        //reduce results to 12 items rather than 20
+        //reduce pagination to 12 items rather than default 20
         let slicedMovies = data.results.slice(0, 12)
         setMovies([...movies, ...slicedMovies])
         setLoading(false)
@@ -62,21 +63,23 @@ const UsingFetch = () => {
 
   useEffect(() => {
     fetchData()
+    //how many renders are happening?
+    console.log("render")
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [offsetNum])
 
 
   return (
     <section> 
-      <Grid container sx={{mt: 6, border: "1px solid grey"}} spacing={0}> 
+      <Grid container sx={{mt: 6, border: ".75px solid grey"}} spacing={0}> 
         {movies.map((movie, index) => (
-          <Grid item sx={{ border: "1px solid grey", '&:hover': {backgroundColor: "white"}}} xs={12} sm={6} md={4} lg={4} key={index}>
+          <Grid item sx={{ border: ".75px solid grey", '&:hover': {backgroundColor: "white"}}} xs={12} sm={6} md={4} lg={4} key={index}>
             <Link href={movie.link.url} sx={{display: 'block', px: 2, py: 2, width: '100%', height: '100%'}} underline="hover" color="inherit" target="_blank" rel="noopener noreferrer">
                 <Image src={movie.multimedia === null ? "/vercel.svg" : movie.multimedia.src} alt="Critic's Pick" width={600} height={400} sx={{imageRendering: 'crisp-edges'}} />
-                <Box sx={{pr: 5, pt: 2}}>
+                <Box sx={{pr: 5, pt: 1, pb: 3}}>
                   <h3>{movie.display_title === "" ? "[No title found]" : movie.display_title }</h3>
                   <i>{movie.summary_short}</i>
-                  <p>{movie.publication_date}</p>
+                  {/* <p>{movie.publication_date}</p> */}
                   {/* <p>{index + 1}</p> */}
                   {/* <a href={movie.link.url}>link to article &#8594;</a> */}
                 </Box>
