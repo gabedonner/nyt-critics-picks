@@ -71,7 +71,7 @@ const UsingFetch = () => {
 
   return (
     <section> 
-      <Grid container sx={{mt: 6, border: ".75px solid grey"}} spacing={0}> 
+      <Grid container sx={{mt: 6, border: ".75px solid grey"}} spacing={.5}> 
         {movies.map((movie, index) => (
           <Grid item sx={{ border: ".75px solid grey", '&:hover': {backgroundColor: "white"}}} xs={12} sm={6} md={4} lg={3} key={index}>
             <Link href={movie.link.url} sx={{display: 'block', px: 2, py: 2, width: '100%', height: '100%'}} underline="hover" color="inherit" target="_blank" rel="noopener noreferrer">
