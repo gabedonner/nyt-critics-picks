@@ -43,7 +43,9 @@ const UsingFetch = () => {
   const [loading, setLoading] = useState(false)
   const [offsetNum, setOffsetNum] = useState(0)
   const [hasMore, setHasMore] = useState()
+  const [query, setQuery] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
+  const [lastQuery, setLastQuery] = useState('')
 
   const fetchData = () => {
     setLoading(true)
@@ -56,7 +58,19 @@ const UsingFetch = () => {
         console.log(data.results)
         //reduce pagination to 12 items rather than default 20
         let slicedMovies = data.results.slice(0, 12)
-        setMovies([...movies, ...slicedMovies])
+
+        if (query === lastQuery) {
+          setMovies([...movies, ...slicedMovies])
+        } else {
+          setMovies([...slicedMovies])
+        }
+
+        // if (searchQuery === '') {
+        //   setMovies([...movies, ...slicedMovies])
+        // } else {
+        //   setMovies([...slicedMovies])
+        // }
+        setLastQuery(query)
         setLoading(false)
       })
   }
@@ -66,11 +80,26 @@ const UsingFetch = () => {
     //how many renders are happening?
     console.log("render")
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [offsetNum])
+  }, [offsetNum, searchQuery])
 
 
   return (
     <section> 
+      <Box>
+        <input
+          type="text"
+          value={query}
+          onChange={event => setQuery(event.target.value)}
+        />
+        <button
+          type="button"
+          onClick={() =>
+            setSearchQuery(query)
+          }
+        >
+          Search
+        </button>
+      </Box>
       <Grid container sx={{mt: 3 }} spacing={4}> 
         {movies.map((movie, index) => (
           <Grid item sx={{ }} xs={12} sm={6} md={4} lg={3} key={index}>
