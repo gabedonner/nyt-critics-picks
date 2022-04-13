@@ -71,12 +71,23 @@ const UsingFetch = () => {
 
   return (
     <section> 
-      <Grid container sx={{mt: 6, border: ".75px solid grey"}} spacing={.5}> 
+      <Grid container sx={{mt: 3 }} spacing={4}> 
         {movies.map((movie, index) => (
-          <Grid item sx={{ border: ".75px solid grey", '&:hover': {backgroundColor: "white"}}} xs={12} sm={6} md={4} lg={3} key={index}>
-            <Link href={movie.link.url} sx={{display: 'block', px: 2, py: 2, width: '100%', height: '100%'}} underline="hover" color="inherit" target="_blank" rel="noopener noreferrer">
+          <Grid item sx={{ }} xs={12} sm={6} md={4} lg={3} key={index}>
+            <Link href={movie.link.url} sx={{
+              boxShadow: "rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;", 
+              //border: ".75px solid grey", 
+              display: 'block', 
+              width: '100%', 
+              height: '100%', 
+              transition: 'all .5s ease',
+              '&:hover': {backgroundColor: "white"}}} 
+              //underline="hover" 
+              underline= "none"
+              color="inherit" 
+              target="_blank" rel="noopener noreferrer">
               <Image src={movie.multimedia === null ? "/vercel.svg" : movie.multimedia.src} alt={movie.display_title} width={600} height={400} sx={{imageRendering: 'crisp-edges'}} />
-              <Box sx={{pr: 3, pt: 0, pb: 3}}>
+              <Box sx={{px: 2, pb: 4}}>
                 <h3>{movie.display_title === "" ? "[No title found]" : movie.display_title }</h3>
                 <i>{movie.summary_short}</i>
                 {/* <p>{movie.publication_date}</p> */}
