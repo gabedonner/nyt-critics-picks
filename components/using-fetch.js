@@ -46,6 +46,7 @@ const UsingFetch = () => {
   const [query, setQuery] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
   const [previousQuery, setPreviousQuery] = useState('')
+  
 
   const fetchData = () => {
     setLoading(true)
@@ -111,7 +112,8 @@ const UsingFetch = () => {
               height: '100%', 
               borderRadius: 1,
               overflow: 'hidden',
-              transition: 'all .5s ease',
+              transition: 'all .5s',
+              transitionTimingFunction: 'cubic-bezier(0.6, 0.01, -0.05, 0.9)',
               '&:hover': {backgroundColor: "white"}}} 
               //underline="hover" 
               underline= "none"
