@@ -56,6 +56,7 @@ const UsingFetch = () => {
       .then(data => {
         console.log(data)
         console.log(data.results)
+        console.log("offset and search: " + offsetNum + "" + searchQuery)
         //reduce pagination to 12 items rather than default 20
         setHasMore(data.has_more)
         console.log(data.has_more)
@@ -99,15 +100,17 @@ const UsingFetch = () => {
           Search
         </button>
       </Box>
-      <Grid container sx={{mt: 3 }} spacing={4}> 
+      <Grid container sx={{mt: 3 }} spacing={5}> 
         {movies.map((movie, index) => (
-          <Grid item sx={{ }} xs={12} sm={6} md={4} lg={3} key={index}>
+          <Grid item sx={{ }} xs={12} sm={6} md={4} lg={4} key={index}>
             <Link href={movie.link.url} sx={{
-              boxShadow: "rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;", 
+              boxShadow: "rgba(0, 0, 0, 0.4) 0px 30px 90px;", 
               //border: ".75px solid grey", 
               display: 'block', 
               width: '100%', 
               height: '100%', 
+              borderRadius: 1,
+              overflow: 'hidden',
               transition: 'all .5s ease',
               '&:hover': {backgroundColor: "white"}}} 
               //underline="hover" 
@@ -115,9 +118,10 @@ const UsingFetch = () => {
               color="inherit" 
               target="_blank" rel="noopener noreferrer">
               <Image src={movie.multimedia === null ? "/vercel.svg" : movie.multimedia.src} alt={movie.display_title} width={600} height={400} sx={{imageRendering: 'crisp-edges'}} />
-              <Box sx={{px: 2, pb: 4}}>
-                <h3>{movie.display_title === "" ? "[No title found]" : movie.display_title }</h3>
+              <Box sx={{px: 2, pb: 2}}>
+                <h2>{movie.display_title === "" ? "[No title found]" : movie.display_title }</h2>
                 <i>{movie.summary_short}</i>
+                <p>{"- " + movie.byline}</p>
                 {/* <p>{movie.publication_date}</p> */}
                 {/* <p>{index + 1}</p> */}
                 {/* <a href={movie.link.url}>link to article &#8594;</a> */}
