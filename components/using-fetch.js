@@ -85,22 +85,27 @@ const UsingFetch = () => {
 
 
   return (
-    <section> 
-      <Box>
-        <input
-          type="text"
-          value={query}
-          onChange={event => setQuery(event.target.value)}
-        />
-        <button
-          type="button"
-          onClick={() =>
-            setSearchQuery(query)
-          }
-        >
-          Search
-        </button>
-      </Box>
+    <section>
+      <Box sx={{display: 'flex', justifyContent: 'space-between', width: '100%'}}>
+        <Box>
+          <h1>NYT Critic&#39;s Picks</h1>
+        </Box>
+        <Box sx={{mt: 3}}>
+          <input 
+            type="text"
+            value={query}
+            onChange={event => setQuery(event.target.value)}
+          />
+          <button
+            type="button"
+            onClick={() =>
+              setSearchQuery(query)
+            }
+          >
+            Search
+          </button>
+        </Box>
+      </Box> 
       <Grid container sx={{mt: 3 }} spacing={5}> 
         {movies.map((movie, index) => (
           <Grid item sx={{ }} xs={12} sm={6} md={4} lg={4} key={index}>
@@ -133,7 +138,7 @@ const UsingFetch = () => {
         ))}
       </Grid>
       {hasMore ?
-        <Box sx={{p: 5, textAlign: 'center'}}>
+        <Box sx={{mt: 3, p: 5, textAlign: 'center'}}>
           <Button variant="contained" onClick={() => setOffsetNum(offsetNum + 12)}>{loading ? 'Loading...' : 'Load More'}</Button>
         </Box> : <p>end of results</p> 
       }
