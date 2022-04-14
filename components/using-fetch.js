@@ -45,7 +45,7 @@ const UsingFetch = () => {
   const [hasMore, setHasMore] = useState(true)
   const [query, setQuery] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
-  const [lastQuery, setLastQuery] = useState('')
+  const [previousQuery, setPreviousQuery] = useState('')
 
   const fetchData = () => {
     setLoading(true)
@@ -62,19 +62,14 @@ const UsingFetch = () => {
         console.log(hasMore)
         let slicedMovies = data.results.slice(0, 12)
 
-        if (query === lastQuery) {
+        if (query === previousQuery) {
           setMovies([...movies, ...slicedMovies])
         } else {
           setOffsetNum(0)
           setMovies(slicedMovies)
         }
 
-        // if (searchQuery === '') {
-        //   setMovies([...movies, ...slicedMovies])
-        // } else {
-        //   setMovies([...slicedMovies])
-        // }
-        setLastQuery(query)
+        setPreviousQuery(query)
         setLoading(false)
       })
   }
