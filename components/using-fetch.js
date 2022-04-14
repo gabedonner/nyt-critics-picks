@@ -42,7 +42,7 @@ const UsingFetch = () => {
   const [movies, setMovies] = useState([])
   const [loading, setLoading] = useState(false)
   const [offsetNum, setOffsetNum] = useState(0)
-  const [hasMore, setHasMore] = useState()
+  const [hasMore, setHasMore] = useState(true)
   const [query, setQuery] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
   const [lastQuery, setLastQuery] = useState('')
@@ -57,6 +57,9 @@ const UsingFetch = () => {
         console.log(data)
         console.log(data.results)
         //reduce pagination to 12 items rather than default 20
+        setHasMore(data.has_more)
+        console.log(data.has_more)
+        console.log(hasMore)
         let slicedMovies = data.results.slice(0, 12)
 
         if (query === lastQuery) {
@@ -128,9 +131,11 @@ const UsingFetch = () => {
           </Grid>
         ))}
       </Grid>
-      <Box sx={{p: 5, textAlign: 'center'}}>
-        <Button variant="contained" onClick={() => setOffsetNum(offsetNum + 12)}>{loading ? 'Loading...' : 'Load More'}</Button>
-      </Box>
+      {hasMore ?
+        <Box sx={{p: 5, textAlign: 'center'}}>
+          <Button variant="contained" onClick={() => setOffsetNum(offsetNum + 12)}>{loading ? 'Loading...' : 'Load More'}</Button>
+        </Box> : <p>end of results</p> 
+      }
     </section>
   )
 }
