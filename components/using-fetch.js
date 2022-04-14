@@ -62,7 +62,8 @@ const UsingFetch = () => {
         if (query === lastQuery) {
           setMovies([...movies, ...slicedMovies])
         } else {
-          setMovies([...slicedMovies])
+          setOffsetNum(0)
+          setMovies(slicedMovies)
         }
 
         // if (searchQuery === '') {
