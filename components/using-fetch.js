@@ -83,7 +83,6 @@ const UsingFetch = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [offsetNum, searchQuery])
 
-
   return (
     <section>
       <Box sx={{display: 'flex', justifyContent: 'space-between', width: '100%'}}>
@@ -106,7 +105,7 @@ const UsingFetch = () => {
           </button>
         </Box>
       </Box> 
-      <Grid container sx={{mt: 3 }} rowSpacing={8} columnSpacing={{ xs: 5, sm: 5, md: 5 }}> 
+      <Grid container sx={{mt: 2 }} rowSpacing={8} columnSpacing={{ xs: 5, sm: 5, md: 5 }}> 
         {movies.map((movie, index) => (
           <Grid item sx={{ }} xs={12} sm={6} md={4} lg={4} key={index}>
             <Link href={movie.link.url} sx={{
@@ -119,14 +118,17 @@ const UsingFetch = () => {
               overflow: 'hidden',
               transition: 'all .5s',
               transitionTimingFunction: 'cubic-bezier(0.6, 0.01, -0.05, 0.9)',
-              '&:hover': {backgroundColor: "white"}}} 
+              '&:hover': {
+                backgroundColor: "white",
+                boxShadow: "rgba(0, 0, 0, 0.55) 0px 30px 90px;", 
+              }}} 
               //underline="hover" 
               underline= "none"
               color="inherit" 
               target="_blank" rel="noopener noreferrer">
               <Image src={movie.multimedia === null ? "/vercel.svg" : movie.multimedia.src} alt={movie.display_title} width={600} height={400} sx={{imageRendering: 'crisp-edges'}} />
               <Box sx={{px: 2, pb: 2}}>
-                <h2>{movie.display_title === "" ? "[No title found]" : movie.display_title }</h2>
+                <h3>{movie.display_title === "" ? "[No title found]" : movie.display_title }</h3>
                 <i>{movie.summary_short}</i>
                 <p>{"- " + movie.byline}</p>
                 {/* <p>{movie.publication_date}</p> */}
