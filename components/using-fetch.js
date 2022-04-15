@@ -8,6 +8,8 @@ import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 import LinkIcon from '@mui/icons-material/Link'
 
+//https://stackoverflow.com/questions/12278587/webkit-text-flickers-when-using-css-transform-scale
+//prevent text flickering on hover scaling
 
 ///reviews/search.json?query=big&opening-date=1980-01-01:1990-01-01
 //API KEY joZEGXraTg5TwCzoVbILHCL6F0e2C9vG
@@ -122,7 +124,7 @@ const UsingFetch = () => {
               '&:hover': {
                 backgroundColor: "white",
                 boxShadow: "rgba(0, 0, 0, 0.55) 0px 30px 90px;", 
-                transform: 'scale(1.008)'
+                transform: 'scale(1.01)'
               }}} 
               //underline="hover" 
               underline= "none"
