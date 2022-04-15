@@ -6,6 +6,7 @@ import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
 import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
+import LinkIcon from '@mui/icons-material/Link'
 
 
 ///reviews/search.json?query=big&opening-date=1980-01-01:1990-01-01
@@ -126,6 +127,7 @@ const UsingFetch = () => {
               underline= "none"
               color="inherit" 
               target="_blank" rel="noopener noreferrer">
+
               <Image src={movie.multimedia === null ? "/vercel.svg" : movie.multimedia.src} alt={movie.display_title} width={600} height={400} sx={{imageRendering: 'crisp-edges'}} />
               <Box sx={{px: 2, pb: 2}}>
                 <h3>{movie.display_title === "" ? "[No title found]" : movie.display_title }</h3>
