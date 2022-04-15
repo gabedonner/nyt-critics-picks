@@ -108,7 +108,7 @@ const UsingFetch = () => {
           </button>
         </Box>
       </Box> 
-      <Grid container sx={{mt: 2 }} rowSpacing={8} columnSpacing={{ xs: 5, sm: 5, md: 5 }}> 
+      <Grid container sx={{mt: 0 }} rowSpacing={9} columnSpacing={{ xs: 5, sm: 5, md: 5 }}> 
         {movies.map((movie, index) => (
           <Grid item sx={{ }} xs={12} sm={6} md={4} lg={4} key={index}>
             <Link href={movie.link.url} sx={{
