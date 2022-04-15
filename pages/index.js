@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import UsingFetch from '../components/using-fetch.js'
 import LoadMore from '../components/load-more'
+import Box from '@mui/material/Box'
 
 export default function Home() {
   //const url = "https://api.adviceslip.com/advice";
@@ -32,12 +33,15 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          NYT Critic&#39;s Picks
-        </h1>
-        <p className={styles.description}>
+        {/* <Box>
+          <h1 className={styles.title}>
+            NYT Critic&#39;s Picks
+          </h1>
+        </Box> */}
+        
+        {/* <p className={styles.description}>
           The best movies, according to the New York Times
-        </p>
+        </p> */}
         
         <UsingFetch />
         {/* <LoadMore /> */}
