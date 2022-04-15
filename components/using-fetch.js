@@ -88,7 +88,7 @@ const UsingFetch = () => {
 
   return (
     <section className={styles.mainSection}>
-      <Box sx={{display: 'flex', justifyContent: 'space-between', width: '100%', borderBottom: '1px dashed grey', pb: 4}}>
+      <Box sx={{display: 'flex', justifyContent: 'space-between', width: '100%', borderBottom: '1px solid #DFDFDF', pb: 4}}>
         <Box>
           <Link href={"."} underline="none" sx={{fontSize: 22, fontWeight: 500}}>NYT Critic&#39;s Picks</Link>
         </Box>
