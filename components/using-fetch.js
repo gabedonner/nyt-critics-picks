@@ -87,8 +87,8 @@ const UsingFetch = () => {
   }, [offsetNum, searchQuery])
 
   return (
-    <section>
-      <Box sx={{display: 'flex', justifyContent: 'space-between', width: '100%'}}>
+    <section className={styles.mainSection}>
+      <Box sx={{display: 'flex', justifyContent: 'space-between', width: '100%', borderBottom: '1px dashed grey', pb: 4}}>
         <Box>
           <Link href={"."} underline="none" sx={{fontSize: 22, fontWeight: 500}}>NYT Critic&#39;s Picks</Link>
         </Box>
@@ -124,7 +124,7 @@ const UsingFetch = () => {
               '&:hover': {
                 backgroundColor: "white",
                 boxShadow: "rgba(0, 0, 0, 0.55) 0px 30px 90px;", 
-                transform: 'scale(1.01)'
+                // transform: 'scale(1.01)'
               }}} 
               //underline="hover" 
               underline= "none"
