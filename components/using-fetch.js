@@ -88,7 +88,7 @@ const UsingFetch = () => {
     <section>
       <Box sx={{display: 'flex', justifyContent: 'space-between', width: '100%'}}>
         <Box>
-          <Link href={"."} underline="none" sx={{fontSize: 22}}>NYT Critic&#39;s Picks</Link>
+          <Link href={"."} underline="none" sx={{fontSize: 22, fontWeight: 500}}>NYT Critic&#39;s Picks</Link>
         </Box>
         <Box sx={{mt: 0}}>
           <input 
