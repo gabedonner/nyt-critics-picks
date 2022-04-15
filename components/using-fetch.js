@@ -92,7 +92,7 @@ const UsingFetch = () => {
         <Box>
           <Link href={"."} underline="none" sx={{fontSize: 22, fontWeight: 500}}>NYT Critic&#39;s Picks</Link>
         </Box>
-        <Box sx={{mt: 0}}>
+        <Box sx={{mt: .5}}>
           <input 
             type="text"
             value={query}
