@@ -7,6 +7,7 @@ body {
 
   /* background-color: #dddddd; */
   background-color: #faf9f6;
+  min-height: 100vh;
 }
 
 a {
