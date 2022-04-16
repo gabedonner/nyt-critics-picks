@@ -85,7 +85,11 @@ const UsingFetch = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [offsetNum, searchQuery])
 
-  const callSearch = (query) =>  {
+  const loadMore = (offsetNum) => {
+    setOffsetNum(offsetNum + 12)
+  }
+
+  const loadSearch = (query) =>  {
     setSearchQuery(query)
     setOffsetNum(0)
   }
@@ -105,7 +109,7 @@ const UsingFetch = () => {
           <button
             type="button"
             onClick={() =>
-              callSearch(query)
+              loadSearch(query)
             }
           >
             Search
@@ -150,7 +154,7 @@ const UsingFetch = () => {
       </Grid>
       {hasMore ?
         <Box sx={{mt: 3, p: 5, textAlign: 'center'}}>
-          <Button variant="contained" onClick={() => setOffsetNum(offsetNum + 12)}>{loading ? 'Loading...' : 'Load More'}</Button>
+          <Button variant="contained" onClick={() => loadMore(offsetNum)}>{loading ? 'Loading...' : 'Load More'}</Button>
         </Box> :
         <Box sx={{mt: 3, p: 5, textAlign: 'center'}}>
           <p>end of results</p> 
