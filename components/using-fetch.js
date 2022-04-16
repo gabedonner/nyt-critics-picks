@@ -98,7 +98,7 @@ const UsingFetch = () => {
     <section className={styles.mainSection}>
       <Box sx={{display: 'flex', justifyContent: 'space-between', width: '100%', borderBottom: '1px solid #DFDFDF', pb: 4}}>
         <Box>
-          <Link href={"."} underline="none" sx={{color: '#666', fontSize: 20, fontWeight: 700}}>NYT Critic&#39;s Picks</Link>
+          <Link href={"."} underline="none" sx={{color: '#666', fontSize: 20, fontWeight: 700}}><i>NYT Critic&#39;s Picks</i></Link>
         </Box>
         <Box sx={{mt: .5}}>
           <input 
@@ -133,7 +133,7 @@ const UsingFetch = () => {
                 backgroundColor: "white",
                 boxShadow: "rgba(0, 0, 0, 0.55) 0px 30px 90px;", 
                 // transform: 'scale(1.01)'
-                transform: 'translate(0, -2px);'
+                //transform: 'translate(0, -2px);'
 
               }}} 
               //underline="hover" 
