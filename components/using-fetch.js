@@ -151,7 +151,10 @@ const UsingFetch = () => {
       {hasMore ?
         <Box sx={{mt: 3, p: 5, textAlign: 'center'}}>
           <Button variant="contained" onClick={() => setOffsetNum(offsetNum + 12)}>{loading ? 'Loading...' : 'Load More'}</Button>
-        </Box> : <p>end of results</p> 
+        </Box> :
+        <Box sx={{mt: 3, p: 5, textAlign: 'center'}}>
+          <p>end of results</p> 
+        </Box>  
       }
     </section>
   )
