@@ -133,9 +133,9 @@ const UsingFetch = () => {
 
               <Image src={movie.multimedia === null ? "/vercel.svg" : movie.multimedia.src} alt={movie.display_title} width={600} height={400} sx={{imageRendering: 'crisp-edges'}} />
               <Box sx={{px: 2, pb: 2}}>
-                <h3>{movie.display_title === "" ? "[No title found]" : movie.display_title }</h3>
-                <i>{movie.summary_short}</i>
-                <p>{"- " + movie.byline}</p>
+                <Typography variant="h3">{movie.display_title === "" ? "[No title found]" : movie.display_title }</Typography>
+                <Typography variant="p"><i>{movie.summary_short}</i></Typography>
+                <Typography variant="p">{"- " + movie.byline}</Typography>
                 {/* <p>{movie.publication_date}</p> */}
                 {/* <p>{index + 1}</p> */}
                 {/* <a href={movie.link.url}>link to article &#8594;</a> */}
@@ -147,7 +147,7 @@ const UsingFetch = () => {
       {hasMore ?
         <Box sx={{mt: 3, p: 5, textAlign: 'center'}}>
           <Button variant="contained" onClick={() => setOffsetNum(offsetNum + 12)}>{loading ? 'Loading...' : 'Load More'}</Button>
-        </Box> : <p>end of results</p> 
+        </Box> : <Typography variant="p">end of results</Typography> 
       }
     </section>
   )
