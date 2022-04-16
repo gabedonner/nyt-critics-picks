@@ -70,7 +70,6 @@ const UsingFetch = () => {
         if (query === previousQuery) {
           setMovies([...movies, ...slicedMovies])
         } else {
-          setOffsetNum(0)
           setMovies(slicedMovies)
         }
 
@@ -85,6 +84,11 @@ const UsingFetch = () => {
     console.log("render")
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [offsetNum, searchQuery])
+
+  const callSearch = (query) =>  {
+    setSearchQuery(query)
+    setOffsetNum(0)
+  }
 
   return (
     <section className={styles.mainSection}>
@@ -101,7 +105,7 @@ const UsingFetch = () => {
           <button
             type="button"
             onClick={() =>
-              setSearchQuery(query)
+              callSearch(query)
             }
           >
             Search
