@@ -2,8 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import UsingFetch from '../components/using-fetch.js'
-import LoadMore from '../components/load-more'
 import Box from '@mui/material/Box'
+import MovieCard from '../components/movie-card'
 
 export default function Home() {
   //const url = "https://api.adviceslip.com/advice";
@@ -33,19 +33,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        {/* <Box>
-          <h1 className={styles.title}>
-            NYT Critic&#39;s Picks
-          </h1>
-        </Box> */}
-        
-        {/* <p className={styles.description}>
-          The best movies, according to the New York Times
-        </p> */}
-        
+        <MovieCard />
         <UsingFetch />
-        {/* <LoadMore /> */}
-
       </main>
 
       {/* <footer className={styles.footer}>
