@@ -7,9 +7,10 @@ body {
 
   /* background-color: #dddddd; */
   /* background-color: #faf9f6; */
-  background-color: white;
+
   min-height: 100vh;
   color: #333;
+  /* background-image: url("/noisy-texture.png"); */
 }
 
 a {
