@@ -7,6 +7,7 @@ import Button from '@mui/material/Button'
 import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 import LinkIcon from '@mui/icons-material/Link'
+import MovieCard from '../components/movie-card.js'
 
 //https://stackoverflow.com/questions/12278587/webkit-text-flickers-when-using-css-transform-scale
 //prevent text flickering on hover scaling
@@ -151,6 +152,7 @@ const UsingFetch = () => {
                 {/* <a href={movie.link.url}>link to article &#8594;</a> */}
               </Box>
             </Link>
+            <MovieCard />
           </Grid>
         ))}
       </Grid>
