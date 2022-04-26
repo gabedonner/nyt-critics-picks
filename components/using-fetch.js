@@ -8,6 +8,7 @@ import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 import LinkIcon from '@mui/icons-material/Link'
 import MovieCard from '../components/movie-card.js'
+import useInfiniteScroll from './infinite-scroll'
 
 //https://stackoverflow.com/questions/12278587/webkit-text-flickers-when-using-css-transform-scale
 //prevent text flickering on hover scaling
@@ -38,6 +39,9 @@ return (
 // const API_KEY = "joZEGXraTg5TwCzoVbILHCL6F0e2C9vG"
 // `https://api.nytimes.com/svc/movies/v2/reviews/picks.json?api-key=${API_KEY}&offset=${offsetNum}&order=${movieOrder}&query=${query}`
 
+// Web Dev Simplified Video on Infinite Scrolling
+// https://www.youtube.com/watch?v=NZKUirTtxcg
+
 const UsingFetch = () => {
 
   //const url = "https://api.nytimes.com/svc/movies/v2/reviews/picks.json?query=&api-key=joZEGXraTg5TwCzoVbILHCL6F0e2C9vG"
@@ -50,7 +54,7 @@ const UsingFetch = () => {
   const [query, setQuery] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
   const [previousQuery, setPreviousQuery] = useState('')
-  
+
 
   const fetchData = () => {
     setLoading(true)
@@ -94,6 +98,11 @@ const UsingFetch = () => {
     setSearchQuery(query)
     setOffsetNum(0)
   }
+
+  // const [lastElementRef] = useInfiniteScroll(
+  //   hasMore ? loadMore : () => {},
+  //   loading
+  // );
 
   return (
     <section className={styles.mainSection}>
