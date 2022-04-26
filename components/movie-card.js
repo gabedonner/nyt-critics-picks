@@ -8,7 +8,7 @@ import Link from '@mui/material/Link'
 
 const MovieCard = () => {
 
-    console.log("title")
+    //console.log("title")
 
     return (
         <div>hi</div>
