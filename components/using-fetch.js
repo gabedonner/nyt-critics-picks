@@ -161,7 +161,7 @@ const UsingFetch = () => {
                 {/* <a href={movie.link.url}>link to article &#8594;</a> */}
               </Box>
             </Link>
-            <MovieCard />
+            {/* <MovieCard /> */}
           </Grid>
         ))}
       </Grid>
