@@ -1,5 +1,8 @@
 import { useRef, useCallback } from "react";
 
+//another possibility:
+//https://github.com/ankeetmaini/react-infinite-scroll-component
+
 //adapted from:
 //https://medium.com/swlh/a-comprehensive-guide-to-load-more-button-and-infinite-scrolling-in-react-js-bd88edf74d5a
 
