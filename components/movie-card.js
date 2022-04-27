@@ -12,7 +12,7 @@ const MovieCard = ({movieData}) => {
     const controls = useAnimation();
     const [ref, inView] = useInView();
     const movieAnimations = {
-        hidden: { opacity: 0, y: 5 },
+        hidden: { opacity: 0, y: 15, height: '100%' },
         visible: { opacity: 1, y: 0 },
         tap: { scale: 0.9 },
     }
@@ -24,34 +24,34 @@ const MovieCard = ({movieData}) => {
     }, [controls, inView]);
 
     return (
-        <Link href={movieData.link.url} sx={{
-            boxShadow: "rgba(0, 0, 0, 0.4) 0px 30px 90px;", 
-            //border: ".75px solid grey", 
-            display: 'block', 
-            width: '100%', 
-            height: '100%', 
-            borderRadius: 1,
-            overflow: 'hidden',
-            transition: 'all .5s',
-            transitionTimingFunction: 'cubic-bezier(0.6, 0.01, -0.05, 0.9)',
-            '&:hover': {
-            backgroundColor: "white",
-            boxShadow: "rgba(0, 0, 0, 0.55) 0px 30px 90px;", 
-            // transform: 'scale(1.01)'
-            //transform: 'translate(0, -2px);'
-
-            }}} 
-            //underline="hover" 
-            underline= "none"
-            color="inherit" 
-            target="_blank" rel="noopener noreferrer">
-
-            <motion.div
+        <motion.div
             variants={movieAnimations}
             ref={ref}
             initial="hidden"
             animate={controls}
             whileTap="tap">
+            <Link href={movieData.link.url} sx={{
+                boxShadow: "rgba(0, 0, 0, 0.4) 0px 30px 90px;", 
+                //border: ".75px solid grey", 
+                display: 'block', 
+                width: '100%', 
+                height: '100%', 
+                borderRadius: 1,
+                overflow: 'hidden',
+                transition: 'all .5s',
+                transitionTimingFunction: 'cubic-bezier(0.6, 0.01, -0.05, 0.9)',
+                '&:hover': {
+                backgroundColor: "white",
+                boxShadow: "rgba(0, 0, 0, 0.55) 0px 30px 90px;", 
+                // transform: 'scale(1.01)'
+                //transform: 'translate(0, -2px);'
+
+                }}} 
+                //underline="hover" 
+                underline= "none"
+                color="inherit" 
+                target="_blank" rel="noopener noreferrer">
+
                 <Image src={movieData.multimedia === null ? "/vercel.svg" : movieData.multimedia.src} alt={movieData.display_title} width={600} height={400} sx={{imageRendering: 'crisp-edges'}} />
                 <Box sx={{px: 2, pb: 2}}>
                 <h3>{movieData.display_title === "" ? "[No title found]" : movieData.display_title }</h3>
@@ -61,9 +61,8 @@ const MovieCard = ({movieData}) => {
                 {/* <p>{index + 1}</p> */}
                 {/* <a href={movie.link.url}>link to article &#8594;</a> */}
                 </Box>
-            </motion.div>
-
-        </Link>
+            </Link>
+          </motion.div>
     )
 }
 
