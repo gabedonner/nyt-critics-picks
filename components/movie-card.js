@@ -11,10 +11,10 @@ import { motion, useAnimation } from 'framer-motion'
 const MovieCard = ({movieData}) => {
     const controls = useAnimation();
     const [ref, inView] = useInView();
-    const movieAnimations = {
+    const cardAnimations = {
         hidden: { opacity: 0, y: 15, height: '100%' },
         visible: { opacity: 1, y: 0 },
-        tap: { scale: 0.9 },
+        tap: { scale: 0.95 },
     }
 
     useEffect(() => {
@@ -25,7 +25,7 @@ const MovieCard = ({movieData}) => {
 
     return (
         <motion.div
-            variants={movieAnimations}
+            variants={cardAnimations}
             ref={ref}
             initial="hidden"
             animate={controls}
