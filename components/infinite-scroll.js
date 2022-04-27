@@ -1,6 +1,6 @@
 import { useRef, useCallback } from "react";
 
-//from:
+//adapted from:
 //https://medium.com/swlh/a-comprehensive-guide-to-load-more-button-and-infinite-scrolling-in-react-js-bd88edf74d5a
 
 const useInfiniteScroll = (callback, loading) => {
