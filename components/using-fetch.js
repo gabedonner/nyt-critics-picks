@@ -106,6 +106,7 @@ const UsingFetch = () => {
 
   return (
     <section className={styles.mainSection}>
+
       <Box sx={{display: 'flex', justifyContent: 'space-between', width: '100%', borderBottom: '1px solid #DFDFDF', pb: 4}}>
         <Box>
           <Link href={"."} underline="none" sx={{color: '#666', fontSize: 20, fontWeight: 700}}><i>NYT Critic&#39;s Picks</i></Link>
@@ -126,6 +127,7 @@ const UsingFetch = () => {
           </button>
         </Box>
       </Box> 
+
       <Grid container sx={{mt: 0 }} rowSpacing={9} columnSpacing={{ xs: 5, sm: 5, md: 5 }}> 
         {movies.map((movie, index) => (
           <Grid item sx={{ }} xs={12} sm={6} md={4} lg={4} key={index}>
@@ -133,6 +135,7 @@ const UsingFetch = () => {
           </Grid>
         ))}
       </Grid>
+
       {hasMore ?
         <Box sx={{mt: 3, p: 5, textAlign: 'center'}}>
           <Button variant="contained" onClick={() => loadMore(offsetNum)}>{loading ? 'Loading...' : 'Load More'}</Button>
@@ -141,6 +144,7 @@ const UsingFetch = () => {
           <p>end of results</p> 
         </Box>  
       }
+      
     </section>
   )
 }
