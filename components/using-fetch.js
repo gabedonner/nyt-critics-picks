@@ -137,14 +137,14 @@ const UsingFetch = () => {
       </Grid>
 
       {hasMore ?
-        <Box sx={{mt: 3, p: 5, textAlign: 'center'}}>
+        <Box sx={{mt: 5, p: 5, textAlign: 'center'}}>
           <Button variant="contained" onClick={() => loadMore(offsetNum)}>{loading ? 'Loading...' : 'Load More'}</Button>
         </Box> :
         <Box sx={{mt: 3, p: 5, textAlign: 'center'}}>
           <p>end of results</p> 
         </Box>  
       }
-      
+
     </section>
   )
 }
