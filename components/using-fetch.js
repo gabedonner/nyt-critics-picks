@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Box from '@mui/material/Box'
@@ -38,7 +38,6 @@ return (
   <User {...data} />
 ) */
 
-
 // const API_KEY = "joZEGXraTg5TwCzoVbILHCL6F0e2C9vG"
 // `https://api.nytimes.com/svc/movies/v2/reviews/picks.json?api-key=${API_KEY}&offset=${offsetNum}&order=${movieOrder}&query=${query}`
 
@@ -46,9 +45,8 @@ return (
 // https://www.youtube.com/watch?v=NZKUirTtxcg
 
 const UsingFetch = () => {
-
   //const url = "https://api.nytimes.com/svc/movies/v2/reviews/picks.json?query=&api-key=joZEGXraTg5TwCzoVbILHCL6F0e2C9vG"
-  const API_KEY = "joZEGXraTg5TwCzoVbILHCL6F0e2C9vG"
+  const API_KEY = 'joZEGXraTg5TwCzoVbILHCL6F0e2C9vG'
 
   const [movies, setMovies] = useState([])
   const [loading, setLoading] = useState(false)
@@ -58,14 +56,16 @@ const UsingFetch = () => {
   const [searchQuery, setSearchQuery] = useState('')
   const [previousQuery, setPreviousQuery] = useState('')
 
-  const fetchData = async() => {
+  const fetchData = async () => {
     setLoading(true)
-    const response = await fetch(`https://api.nytimes.com/svc/movies/v2/reviews/picks.json?api-key=${API_KEY}&offset=${offsetNum}&query=${searchQuery}`)
+    const response = await fetch(
+      `https://api.nytimes.com/svc/movies/v2/reviews/picks.json?api-key=${API_KEY}&offset=${offsetNum}&query=${searchQuery}`
+    )
     const data = await response.json()
 
     console.log(data)
     console.log(data.results)
-    console.log("offset and search: " + offsetNum + "" + searchQuery)
+    console.log('offset and search: ' + offsetNum + '' + searchQuery)
     //reduce pagination to 12 items rather than default 20
     setHasMore(data.has_more)
     console.log(data.has_more)
@@ -85,15 +85,15 @@ const UsingFetch = () => {
   useEffect(() => {
     fetchData()
     //how many renders are happening?
-    console.log("render")
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    console.log('render')
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [offsetNum, searchQuery])
 
   const loadMore = (offsetNum) => {
     setOffsetNum(offsetNum + 12)
   }
 
-  const loadSearch = (query) =>  {
+  const loadSearch = (query) => {
     setSearchQuery(query)
     setOffsetNum(0)
   }
@@ -105,40 +105,65 @@ const UsingFetch = () => {
 
   return (
     <section className={styles.mainSection}>
-      <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', borderBottom: '1px solid #DFDFDF', pb: 4}}>
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          width: '100%',
+          borderBottom: '1px solid #DFDFDF',
+          pb: 4,
+        }}
+      >
         <Box>
-          <Link href={"."} underline="none" sx={{color: '#666', fontSize: [18, 24], fontWeight: 700}}><i>NYT Critic&#39;s Picks</i></Link>
+          <Link
+            href={'.'}
+            underline="none"
+            sx={{ color: '#666', fontSize: [18, 24], fontWeight: 700 }}
+          >
+            <i>NYT Critic&#39;s Picks</i>
+          </Link>
         </Box>
-        
+
         <Box
           component="form"
-          sx={{ borderRadius: 1, border: '1px solid #DFDFDF', p: '1px 2px', display: 'flex', alignItems: 'center', width: [150, 300, 400] }}
+          sx={{
+            borderRadius: 1,
+            border: '1px solid #DFDFDF',
+            p: '1px 2px',
+            display: 'flex',
+            alignItems: 'center',
+            width: [150, 300, 400],
+          }}
         >
           <Input
             size="small"
             sx={{ ml: 1, flex: 1 }}
             placeholder="Search"
-            disableUnderline='true'
-            inputProps={{ 
+            disableUnderline="true"
+            inputProps={{
               'aria-label': 'search',
-             }}
+            }}
             value={query}
-            onChange={event => setQuery(event.target.value)}
+            onChange={(event) => setQuery(event.target.value)}
             onKeyPress={(e) => {
-              console.log(`Pressed keyCode ${e.key}`);
+              console.log(`Pressed keyCode ${e.key}`)
               if (e.key === 'Enter') {
                 e.preventDefault()
                 loadSearch(query)
               }
-            }}          
+            }}
           />
-          <IconButton type="button" sx={{ p: '10px' }} aria-label="search" onClick={() => loadSearch(query)}>
+          <IconButton
+            type="button"
+            sx={{ p: '10px' }}
+            aria-label="search"
+            onClick={() => loadSearch(query)}
+          >
             <SearchIcon />
           </IconButton>
         </Box>
-      </Box> 
-
-      
+      </Box>
 
       {/* <Box sx={{display: 'flex', justifyContent: 'space-between', width: '100%', borderBottom: '1px solid #DFDFDF', pb: 4}}>
         <Box>
@@ -161,23 +186,30 @@ const UsingFetch = () => {
         </Box>
       </Box>  */}
 
-      <Grid container sx={{mt: 0 }} rowSpacing={9} columnSpacing={{ xs: 5, sm: 5, md: 5 }}> 
+      <Grid
+        container
+        sx={{ mt: 0 }}
+        rowSpacing={9}
+        columnSpacing={{ xs: 5, sm: 5, md: 5 }}
+      >
         {movies.map((movie, index) => (
-          <Grid item sx={{ }} xs={12} sm={6} md={4} lg={4} key={index}>
-            <MovieCard movieData={movie}/>
+          <Grid item sx={{}} xs={12} sm={6} md={4} lg={4} key={index}>
+            <MovieCard movieData={movie} />
           </Grid>
         ))}
       </Grid>
 
-      {hasMore ?
-        <Box sx={{mt: 5, p: 5, textAlign: 'center'}}>
-          <Button variant="contained" onClick={() => loadMore(offsetNum)}>{loading ? 'Loading...' : 'Load More'}</Button>
-        </Box> :
-        <Box sx={{mt: 3, p: 5, textAlign: 'center'}}>
-          <p>end of results</p> 
-        </Box>  
-      }
-
+      {hasMore ? (
+        <Box sx={{ mt: 5, p: 5, textAlign: 'center' }}>
+          <Button variant="contained" onClick={() => loadMore(offsetNum)}>
+            {loading ? 'Loading...' : 'Load More'}
+          </Button>
+        </Box>
+      ) : (
+        <Box sx={{ mt: 3, p: 5, textAlign: 'center' }}>
+          <p>end of results</p>
+        </Box>
+      )}
     </section>
   )
 }
