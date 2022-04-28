@@ -117,12 +117,12 @@ const UsingFetch = () => {
     <section className={styles.mainSection}>
       <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', borderBottom: '1px solid #DFDFDF', pb: 4}}>
         <Box>
-          <Link href={"."} underline="none" sx={{color: '#666', fontSize: 24, fontWeight: 700}}><i>NYT Critic&#39;s Picks</i></Link>
+          <Link href={"."} underline="none" sx={{color: '#666', fontSize: [18, 24], fontWeight: 700}}><i>NYT Critic&#39;s Picks</i></Link>
         </Box>
         
         <Box
           component="form"
-          sx={{ borderRadius: 1, border: '1px solid #DFDFDF', p: '1px 2px', display: 'flex', alignItems: 'center', width: 400 }}
+          sx={{ borderRadius: 1, border: '1px solid #DFDFDF', p: '1px 2px', display: 'flex', alignItems: 'center', width: [150, 300, 400] }}
         >
           <Input
             disableUnderline='true'
