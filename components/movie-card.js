@@ -1,7 +1,8 @@
-import React, {useEffect} from 'react';
+import React, {useEffect} from 'react'
 import Image from 'next/image'
 import Box from '@mui/material/Box'
 import Link from '@mui/material/Link'
+import LinkIcon from '@mui/icons-material/Link'
 import { useInView } from 'react-intersection-observer'
 import { motion, useAnimation } from 'framer-motion'
 
@@ -10,12 +11,11 @@ const MovieCard = ({movieData}) => {
     const controls = useAnimation();
     const [ref, inView] = useInView();
     const cardAnimations = {
-        hidden: { opacity: 0, y: 5, height: '100%' },
+        hidden: { opacity: 0, y: 10, height: '100%' },
         visible: { opacity: 1, y: 0 },
         tap: { scale: 0.98 },
     }
-
-    const transition = { duration: 1, ease: [0.6, 0.01, -0.05, 0.9] };
+    const transition = { duration: 1, ease: [0.6, 0.01, -0.05, 0.9] }
 
 
     useEffect(() => {
@@ -53,7 +53,6 @@ const MovieCard = ({movieData}) => {
                 underline= "none"
                 color="inherit" 
                 target="_blank" rel="noopener noreferrer">
-
                 <Image src={movieData.multimedia === null ? "/vercel.svg" : movieData.multimedia.src} alt={movieData.display_title} width={600} height={400} sx={{imageRendering: 'crisp-edges'}} />
                 <Box sx={{px: 2, pb: 2}}>
                 <h3>{movieData.display_title === "" ? "[No title found]" : movieData.display_title }</h3>
