@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import UsingFetch from '../components/using-fetch.js'
 import Box from '@mui/material/Box'
-import MovieCard from '../components/movie-card'
+import ScrollToTop from '../components/scroll-to-top.js'
 
 export default function Home() {
 
@@ -16,6 +16,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        {/* <ScrollToTop /> */}
         <UsingFetch />
       </main>
 
