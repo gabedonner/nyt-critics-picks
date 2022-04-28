@@ -55,32 +55,28 @@ const UsingFetch = () => {
   const [searchQuery, setSearchQuery] = useState('')
   const [previousQuery, setPreviousQuery] = useState('')
 
-
-  const fetchData = () => {
+  const fetchData = async() => {
     setLoading(true)
-    fetch(`https://api.nytimes.com/svc/movies/v2/reviews/picks.json?api-key=${API_KEY}&offset=${offsetNum}&query=${searchQuery}`)
-      .then(response => {
-        return response.json()
-      })
-      .then(data => {
-        console.log(data)
-        console.log(data.results)
-        console.log("offset and search: " + offsetNum + "" + searchQuery)
-        //reduce pagination to 12 items rather than default 20
-        setHasMore(data.has_more)
-        console.log(data.has_more)
-        console.log(hasMore)
-        let slicedMovies = data.results.slice(0, 12)
+    const response = await fetch(`https://api.nytimes.com/svc/movies/v2/reviews/picks.json?api-key=${API_KEY}&offset=${offsetNum}&query=${searchQuery}`)
+    const data = await response.json()
 
-        if (query === previousQuery) {
-          setMovies([...movies, ...slicedMovies])
-        } else {
-          setMovies(slicedMovies)
-        }
+    console.log(data)
+    console.log(data.results)
+    console.log("offset and search: " + offsetNum + "" + searchQuery)
+    //reduce pagination to 12 items rather than default 20
+    setHasMore(data.has_more)
+    console.log(data.has_more)
+    console.log(hasMore)
+    let slicedMovies = data.results.slice(0, 12)
 
-        setPreviousQuery(query)
-        setLoading(false)
-      })
+    if (query === previousQuery) {
+      setMovies([...movies, ...slicedMovies])
+    } else {
+      setMovies(slicedMovies)
+    }
+
+    setPreviousQuery(query)
+    setLoading(false)
   }
 
   useEffect(() => {
