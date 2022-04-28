@@ -6,23 +6,6 @@ import Box from '@mui/material/Box'
 import MovieCard from '../components/movie-card'
 
 export default function Home() {
-  //const url = "https://api.adviceslip.com/advice";
-  
-  //async fetch
-  /* useEffect(() => {
-
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url);
-        const json = await response.json();
-        console.log(json);
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
-
-    fetchData();
-  }, []); */
 
   return (
     <div className={styles.container}>
