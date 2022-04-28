@@ -126,11 +126,15 @@ const UsingFetch = () => {
           component="form"
           sx={{ borderRadius: 1, border: '1px solid #DFDFDF', p: '1px 2px', display: 'flex', alignItems: 'center', width: [150, 300, 400] }}
         >
-          <TextField
-            variant="standard"
-            sx={{ ml: 1, flex: 1, pt: 0 }}
+          <Input
+            size="small"
+            sx={{ ml: 1, flex: 1 }}
+            style={{ border: '0' }}
             placeholder="Search"
-            inputProps={{ 'aria-label': 'search', disableUnderline: 'true' }}
+            disableUnderline='true'
+            inputProps={{ 
+              'aria-label': 'search',
+             }}
             value={query}
             onChange={event => setQuery(event.target.value)}
             onKeyPress={(e) => {
