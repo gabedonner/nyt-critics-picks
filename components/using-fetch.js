@@ -13,18 +13,6 @@ import IconButton from '@mui/material/IconButton'
 import Input from '@mui/material/Input'
 import TextField from '@mui/material/TextField'
 
-
-
-
-// import * as React from 'react';
-// import Paper from '@mui/material/Paper';
-// import Input from "@mui/material/Input"
-// import IconButton from '@mui/material/IconButton';
-// import SearchIcon from '@mui/icons-material/Search';
-// import Box from '@mui/material/Box'
-
-
-
 //https://stackoverflow.com/questions/12278587/webkit-text-flickers-when-using-css-transform-scale
 //prevent text flickering on hover scaling
 
