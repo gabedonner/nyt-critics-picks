@@ -15,6 +15,9 @@ const MovieCard = ({movieData}) => {
         tap: { scale: 0.95 },
     }
 
+    const transition = { duration: 1, ease: [0.6, 0.01, -0.05, 0.9] };
+
+
     useEffect(() => {
         if (inView) {
             controls.start("visible");
@@ -27,6 +30,7 @@ const MovieCard = ({movieData}) => {
             ref={ref}
             initial="hidden"
             animate={controls}
+            transition={transition}
             whileTap="tap">
             <Link href={movieData.link.url} sx={{
                 boxShadow: "rgba(0, 0, 0, 0.4) 0px 30px 90px;", 
