@@ -6,9 +6,22 @@ import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
 import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
-import LinkIcon from '@mui/icons-material/Link'
 import MovieCard from '../components/movie-card.js'
 import useInfiniteScroll from './infinite-scroll'
+import SearchIcon from '@mui/icons-material/Search'
+import IconButton from '@mui/material/IconButton'
+import Input from '@mui/material/Input'
+
+
+
+// import * as React from 'react';
+// import Paper from '@mui/material/Paper';
+// import Input from "@mui/material/Input"
+// import IconButton from '@mui/material/IconButton';
+// import SearchIcon from '@mui/icons-material/Search';
+// import Box from '@mui/material/Box'
+
+
 
 //https://stackoverflow.com/questions/12278587/webkit-text-flickers-when-using-css-transform-scale
 //prevent text flickering on hover scaling
@@ -102,8 +115,32 @@ const UsingFetch = () => {
 
   return (
     <section className={styles.mainSection}>
+      <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', borderBottom: '1px solid #DFDFDF', pb: 4}}>
+        <Box>
+          <Link href={"."} underline="none" sx={{color: '#666', fontSize: 24, fontWeight: 700}}><i>NYT Critic&#39;s Picks</i></Link>
+        </Box>
+        
+        <Box
+          component="form"
+          sx={{ borderRadius: 1, border: '1px solid #DFDFDF', p: '1px 2px', display: 'flex', alignItems: 'center', width: 400 }}
+        >
+          <Input
+            disableUnderline='true'
+            sx={{ ml: 1, flex: 1, pt: 0 }}
+            placeholder="Search"
+            inputProps={{ 'aria-label': 'search' }}
+            value={query}
+            onChange={event => setQuery(event.target.value)}
+          />
+          <IconButton type="button" sx={{ p: '10px' }} aria-label="search" onClick={() => loadSearch(query)}>
+            <SearchIcon />
+          </IconButton>
+        </Box>
+      </Box> 
 
-      <Box sx={{display: 'flex', justifyContent: 'space-between', width: '100%', borderBottom: '1px solid #DFDFDF', pb: 4}}>
+      
+
+      {/* <Box sx={{display: 'flex', justifyContent: 'space-between', width: '100%', borderBottom: '1px solid #DFDFDF', pb: 4}}>
         <Box>
           <Link href={"."} underline="none" sx={{color: '#666', fontSize: 20, fontWeight: 700}}><i>NYT Critic&#39;s Picks</i></Link>
         </Box>
@@ -122,7 +159,7 @@ const UsingFetch = () => {
             Search
           </button>
         </Box>
-      </Box> 
+      </Box>  */}
 
       <Grid container sx={{mt: 0 }} rowSpacing={9} columnSpacing={{ xs: 5, sm: 5, md: 5 }}> 
         {movies.map((movie, index) => (
