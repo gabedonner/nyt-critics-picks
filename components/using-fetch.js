@@ -117,7 +117,6 @@ const UsingFetch = () => {
           <Input
             size="small"
             sx={{ ml: 1, flex: 1 }}
-            style={{ border: '0' }}
             placeholder="Search"
             disableUnderline='true'
             inputProps={{ 
