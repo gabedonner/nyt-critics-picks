@@ -11,6 +11,8 @@ import useInfiniteScroll from './infinite-scroll'
 import SearchIcon from '@mui/icons-material/Search'
 import IconButton from '@mui/material/IconButton'
 import Input from '@mui/material/Input'
+import TextField from '@mui/material/TextField'
+
 
 
 
@@ -124,13 +126,20 @@ const UsingFetch = () => {
           component="form"
           sx={{ borderRadius: 1, border: '1px solid #DFDFDF', p: '1px 2px', display: 'flex', alignItems: 'center', width: [150, 300, 400] }}
         >
-          <Input
-            disableUnderline='true'
+          <TextField
+            variant="standard"
             sx={{ ml: 1, flex: 1, pt: 0 }}
             placeholder="Search"
-            inputProps={{ 'aria-label': 'search' }}
+            inputProps={{ 'aria-label': 'search', disableUnderline: 'true' }}
             value={query}
             onChange={event => setQuery(event.target.value)}
+            onKeyPress={(e) => {
+              console.log(`Pressed keyCode ${e.key}`);
+              if (e.key === 'Enter') {
+                e.preventDefault()
+                loadSearch(query)
+              }
+            }}          
           />
           <IconButton type="button" sx={{ p: '10px' }} aria-label="search" onClick={() => loadSearch(query)}>
             <SearchIcon />
