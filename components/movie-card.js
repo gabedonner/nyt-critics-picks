@@ -56,7 +56,7 @@ const MovieCard = ({movieData}) => {
                 <Image src={movieData.multimedia === null ? "/vercel.svg" : movieData.multimedia.src} alt={movieData.display_title} width={600} height={400} sx={{imageRendering: 'crisp-edges'}} />
                 <Box sx={{px: 2, pb: 2}}>
                 <h3>{movieData.display_title === "" ? "[No title found]" : movieData.display_title }</h3>
-                <i>{movieData.summary_short}</i>
+                <i>{movieData.summary_short.length > 200 ? movieData.summary_short.substring(0, 200) + "..." : movieData.summary_short}</i>
                 <p>{"- " + movieData.byline}</p>
                 {/* <p>{movie.publication_date}</p> */}
                 {/* <p>{index + 1}</p> */}
