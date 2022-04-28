@@ -6,7 +6,6 @@ import Box from '@mui/material/Box'
 import ScrollToTop from '../components/scroll-to-top.js'
 
 export default function Home() {
-
   return (
     <div className={styles.container}>
       <Head>
