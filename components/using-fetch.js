@@ -133,7 +133,7 @@ const UsingFetch = () => {
             p: '1px 2px',
             display: 'flex',
             alignItems: 'center',
-            width: [150, 300, 400],
+            width: [150, 300],
           }}
         >
           <Input
