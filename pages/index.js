@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Button from '@mui/material/Button'
-import AppBarHide from '../components/hide-on-scroll-bar.js'
+import AppBar from '../components/hide-on-scroll-bar.js'
 import MovieGrid from '../components/movie-grid.js'
 
 //lifting state:
@@ -69,7 +69,7 @@ export default function Home() {
         <link rel="icon" href="/critics-picks-favicon.png" />
       </Head>
 
-      <AppBarHide loadSearch={loadSearch} />
+      <AppBar loadSearch={loadSearch} />
 
       <MovieGrid movies={movies} />
 
