@@ -15,9 +15,9 @@ import Link from '@mui/material/Link'
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  backgroundColor: alpha(theme.palette.common.black, 0.1),
   '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
+    backgroundColor: alpha(theme.palette.common.black, 0.05),
   },
   marginLeft: 0,
   //width: ['100%'],
@@ -73,7 +73,16 @@ const HideAppBar = ({ props, loadSearch }) => {
     <React.Fragment>
       <CssBaseline />
       <HideOnScroll {...props}>
-        <AppBar position="fixed" color="secondary" sx={{ py: 0.5, px: '2vw' }}>
+        <AppBar
+          position="fixed"
+          color="background"
+          sx={{
+            boxShadow: 'none',
+            borderBottom: '1px solid #DFDFDF',
+            py: 1.25,
+            px: '2vw',
+          }}
+        >
           <Toolbar>
             {/* <Typography
               variant="h6"
@@ -89,7 +98,7 @@ const HideAppBar = ({ props, loadSearch }) => {
               noWrap
               sx={{
                 //color: '#666',
-                color: 'white',
+                color: '#666',
                 fontSize: [18],
                 fontWeight: 700,
                 flexGrow: 1,
