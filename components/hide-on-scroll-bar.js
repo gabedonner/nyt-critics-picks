@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useEffect, useState } from 'react'
 import { styled, alpha } from '@mui/material/styles'
 import PropTypes from 'prop-types'
 import AppBar from '@mui/material/AppBar'
@@ -80,7 +80,9 @@ HideOnScroll.propTypes = {
   window: PropTypes.func,
 }
 
-export default function HideAppBar(props) {
+const HideAppBar = ({ props, loadSearch }) => {
+  const [query, setQuery] = useState('')
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -117,6 +119,15 @@ export default function HideAppBar(props) {
               <StyledInputBase
                 placeholder="Search…"
                 inputProps={{ 'aria-label': 'search' }}
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                onKeyPress={(e) => {
+                  //   console.log(`Pressed keyCode ${e.key}`)
+                  if (e.key === 'Enter') {
+                    e.preventDefault()
+                    loadSearch(query)
+                  }
+                }}
               />
             </Search>
           </Toolbar>
@@ -126,3 +137,5 @@ export default function HideAppBar(props) {
     </React.Fragment>
   )
 }
+
+export default HideAppBar
