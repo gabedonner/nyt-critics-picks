@@ -68,8 +68,8 @@ const UsingFetch = () => {
     console.log('offset and search: ' + offsetNum + '' + searchQuery)
     //reduce pagination to 12 items rather than default 20
     setHasMore(data.has_more)
-    console.log(data.has_more)
-    console.log(hasMore)
+    console.log('has more: ' + data.has_more)
+    console.log('has more: ' + hasMore)
     let slicedMovies = data.results.slice(0, 12)
 
     if (query === previousQuery) {
