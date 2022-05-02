@@ -10,8 +10,8 @@ const MovieCard = ({ movieData }) => {
   //const [ref, inView] = useInView()
   //const controls = useAnimation()
   const cardAnimations = {
-    hidden: { opacity: 0, y: 10, height: '100%' },
-    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, height: '100%' },
+    visible: { opacity: 1 },
     tap: { scale: 0.98 },
   }
   const transition = { duration: 1, ease: [0.6, 0.01, -0.05, 0.9] }
@@ -47,18 +47,18 @@ const MovieCard = ({ movieData }) => {
       <Link
         href={movieData.link.url}
         sx={{
-          boxShadow: 'rgba(0, 0, 0, 0.4) 0px 30px 90px;',
-          //border: ".75px solid grey",
+          //boxShadow: 'rgba(0, 0, 0, 0.4) 0px 30px 90px;',
+          border: '.75px solid grey',
           display: 'block',
           width: '100%',
           height: '100%',
           borderRadius: 1,
           overflow: 'hidden',
-          transition: 'all .5s',
-          transitionTimingFunction: 'cubic-bezier(0.6, 0.01, -0.05, 0.9)',
+          //transition: 'all .5s',
+          //transitionTimingFunction: 'cubic-bezier(0.6, 0.01, -0.05, 0.9)',
           '&:hover': {
-            backgroundColor: 'white',
-            boxShadow: 'rgba(0, 0, 0, 0.55) 0px 30px 90px;',
+            //backgroundColor: 'white',
+            //boxShadow: 'rgba(0, 0, 0, 0.55) 0px 30px 90px;',
             // transform: 'scale(1.01)'
             //transform: 'translate(0, -2px);'
           },
@@ -78,7 +78,7 @@ const MovieCard = ({ movieData }) => {
           alt={movieData.display_title}
           width={600}
           height={400}
-          sx={{ imageRendering: 'crisp-edges' }}
+          // sx={{ imageRendering: 'crisp-edges' }}
         />
         <Box sx={{ px: 2, pb: 2 }}>
           <h3>
