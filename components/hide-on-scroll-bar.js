@@ -97,13 +97,14 @@ export default function HideAppBar(props) {
             <Link
               href={'.'}
               underline="none"
+              noWrap
               sx={{
                 //color: '#666',
                 color: 'white',
                 fontSize: [18, 24],
                 fontWeight: 700,
                 flexGrow: 1,
-                display: { xs: 'none', sm: 'block' },
+                display: { xs: 'block', sm: 'block' },
               }}
             >
               <i>NYT Critic&#39;s Picks</i>
