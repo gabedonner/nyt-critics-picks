@@ -15,9 +15,9 @@ import Link from '@mui/material/Link'
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.black, 0.1),
+  backgroundColor: alpha(theme.palette.common.black, 0.05),
   '&:hover': {
-    backgroundColor: alpha(theme.palette.common.black, 0.05),
+    backgroundColor: alpha(theme.palette.common.black, 0.035),
   },
   marginLeft: 0,
   //width: ['100%'],
