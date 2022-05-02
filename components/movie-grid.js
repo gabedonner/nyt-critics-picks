@@ -10,7 +10,7 @@ const MovieGrid = ({ movies }) => {
       columnSpacing={{ xs: 5, sm: 5, md: 5 }}
     >
       {movies.map((movie, index) => (
-        <Grid item sx={{}} xs={12} sm={6} md={6} lg={4} key={index}>
+        <Grid item sx={{}} xs={12} sm={6} md={4} lg={4} key={index}>
           <MovieCard movieData={movie} />
         </Grid>
       ))}

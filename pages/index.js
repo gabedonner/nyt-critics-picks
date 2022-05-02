@@ -4,7 +4,9 @@ import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Button from '@mui/material/Button'
 import AppBar from '../components/app-bar.js'
-import MovieGrid from '../components/movie-grid.js'
+//import MovieGrid from '../components/movie-grid.js'
+import Grid from '@mui/material/Grid'
+import MovieCard from '../components/movie-card.js'
 
 //lifting state:
 //https://www.youtube.com/watch?v=rdwc4JmX_fU
@@ -71,7 +73,20 @@ export default function Home() {
 
       <AppBar loadSearch={loadSearch} />
 
-      <MovieGrid movies={movies} />
+      {/* <MovieGrid movies={movies} /> */}
+
+      <Grid
+        container
+        sx={{ mt: 0 }}
+        rowSpacing={9}
+        columnSpacing={{ xs: 5, sm: 5, md: 5 }}
+      >
+        {movies.map((movie, index) => (
+          <Grid item sx={{}} xs={12} sm={6} md={4} lg={4} key={index}>
+            <MovieCard movieData={movie} />
+          </Grid>
+        ))}
+      </Grid>
 
       {hasMore ? (
         <Box sx={{ mt: 5, p: 5, textAlign: 'center' }}>
