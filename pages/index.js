@@ -9,8 +9,7 @@ import { styled } from '@mui/material/styles'
 import Container from '@mui/material/Container'
 import Button from '@mui/material/Button'
 import AppBarHide from '../components/hide-on-scroll-bar.js'
-import Grid from '@mui/material/Grid'
-import MovieCard from '../components/movie-card.js'
+import MovieGrid from '../components/movie-grid.js'
 
 //lifting state:
 //https://www.youtube.com/watch?v=rdwc4JmX_fU
@@ -83,18 +82,8 @@ export default function Home() {
       {/* <Offset /> */}
 
       {/* <UsingFetch /> */}
-      <Grid
-        container
-        sx={{ mt: 0 }}
-        rowSpacing={9}
-        columnSpacing={{ xs: 5, sm: 5, md: 5 }}
-      >
-        {movies.map((movie, index) => (
-          <Grid item sx={{}} xs={12} sm={6} md={6} lg={4} key={index}>
-            <MovieCard movieData={movie} />
-          </Grid>
-        ))}
-      </Grid>
+
+      <MovieGrid movies={movies} />
 
       {hasMore ? (
         <Box sx={{ mt: 5, p: 5, textAlign: 'center' }}>
