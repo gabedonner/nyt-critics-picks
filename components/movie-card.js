@@ -7,7 +7,7 @@ import { useInView } from 'react-intersection-observer'
 import { motion, useAnimation } from 'framer-motion'
 
 const MovieCard = ({ movieData }) => {
-  const [ref, inView] = useInView()
+  //const [ref, inView] = useInView()
   const controls = useAnimation()
   const cardAnimations = {
     hidden: { opacity: 0, y: 10, height: '100%' },
@@ -27,20 +27,22 @@ const MovieCard = ({ movieData }) => {
     day: 'numeric',
   }
 
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible')
-    }
-  }, [controls, inView])
+  // useEffect(() => {
+  //   if (inView) {
+  //     controls.start('visible')
+  //   }
+  // }, [controls, inView])
 
   return (
     <motion.div
       variants={cardAnimations}
-      ref={ref}
+      // ref={ref}
       initial="hidden"
       animate={controls}
       transition={transition}
       whileTap="tap"
+      whileInView="visible"
+      viewport={{ once: true }}
     >
       <Link
         href={movieData.link.url}
