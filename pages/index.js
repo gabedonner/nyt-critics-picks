@@ -2,7 +2,6 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import UsingFetch from '../components/using-fetch.js'
 import Box from '@mui/material/Box'
 import ScrollToTop from '../components/scroll-to-top.js'
 import AppBar from '../components/app-bar.js'
@@ -38,20 +37,20 @@ export default function Home() {
 
     console.log(data)
     console.log(data.results)
-    console.log('offset and search: ' + offsetNum + '' + searchQuery)
+    console.log('offset and search: ' + offsetNum + ' ' + searchQuery)
     //reduce pagination to 12 items rather than default 20
     setHasMore(data.has_more)
     console.log('has more: ' + data.has_more)
     console.log('has more: ' + hasMore)
     let slicedMovies = data.results.slice(0, 12)
 
-    if (query === previousQuery) {
+    if (searchQuery === previousQuery) {
       setMovies([...movies, ...slicedMovies])
     } else {
       setMovies(slicedMovies)
     }
 
-    setPreviousQuery(query)
+    setPreviousQuery(searchQuery)
     setLoading(false)
   }
 
@@ -80,7 +79,7 @@ export default function Home() {
       </Head>
 
       {/* <AppBar /> */}
-      <AppBarHide />
+      <AppBarHide loadSearch={loadSearch} />
       {/* <Offset /> */}
 
       {/* <UsingFetch /> */}
@@ -91,7 +90,7 @@ export default function Home() {
         columnSpacing={{ xs: 5, sm: 5, md: 5 }}
       >
         {movies.map((movie, index) => (
-          <Grid item sx={{}} xs={12} sm={6} md={4} lg={4} key={index}>
+          <Grid item sx={{}} xs={12} sm={6} md={6} lg={4} key={index}>
             <MovieCard movieData={movie} />
           </Grid>
         ))}
