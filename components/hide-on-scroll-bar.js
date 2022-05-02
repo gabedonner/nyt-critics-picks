@@ -10,6 +10,7 @@ import Slide from '@mui/material/Slide'
 import IconButton from '@mui/material/IconButton'
 import InputBase from '@mui/material/InputBase'
 import SearchIcon from '@mui/icons-material/Search'
+import Link from '@mui/material/Link'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -85,14 +86,28 @@ export default function HideAppBar(props) {
       <HideOnScroll {...props}>
         <AppBar position="fixed" color="secondary">
           <Toolbar>
-            <Typography
+            {/* <Typography
               variant="h6"
               noWrap
               component="div"
               sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
             >
               NYT Critic&#39;s Picks
-            </Typography>
+            </Typography> */}
+            <Link
+              href={'.'}
+              underline="none"
+              sx={{
+                //color: '#666',
+                color: 'white',
+                fontSize: [18, 24],
+                fontWeight: 700,
+                flexGrow: 1,
+                display: { xs: 'none', sm: 'block' },
+              }}
+            >
+              <i>NYT Critic&#39;s Picks</i>
+            </Link>
             <Search>
               <SearchIconWrapper>
                 <SearchIcon />
