@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Image from 'next/image'
 import Box from '@mui/material/Box'
 import Link from '@mui/material/Link'
-import LinkIcon from '@mui/icons-material/Link'
+// import LinkIcon from '@mui/icons-material/Link'
 import { useInView } from 'react-intersection-observer'
 import { motion, useAnimation } from 'framer-motion'
 
