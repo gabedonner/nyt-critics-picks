@@ -20,7 +20,8 @@ const Search = styled('div')(({ theme }) => ({
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
   marginLeft: 0,
-  width: '100%',
+  //width: ['100%'],
+  width: 'auto',
   [theme.breakpoints.up('sm')]: {
     marginLeft: theme.spacing(1),
     width: 'auto',
@@ -84,7 +85,7 @@ export default function HideAppBar(props) {
     <React.Fragment>
       <CssBaseline />
       <HideOnScroll {...props}>
-        <AppBar position="fixed" color="secondary">
+        <AppBar position="fixed" color="secondary" sx={{ py: 0.5, px: '2vw' }}>
           <Toolbar>
             {/* <Typography
               variant="h6"
@@ -101,7 +102,7 @@ export default function HideAppBar(props) {
               sx={{
                 //color: '#666',
                 color: 'white',
-                fontSize: [18, 24],
+                fontSize: [18],
                 fontWeight: 700,
                 flexGrow: 1,
                 display: { xs: 'block', sm: 'block' },
