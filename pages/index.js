@@ -22,7 +22,6 @@ export default function Home() {
   const [loading, setLoading] = useState(false)
   const [offsetNum, setOffsetNum] = useState(0)
   const [hasMore, setHasMore] = useState(true)
-  const [query, setQuery] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
   const [previousQuery, setPreviousQuery] = useState('')
 
