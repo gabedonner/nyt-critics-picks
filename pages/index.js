@@ -40,6 +40,7 @@ export default function Home() {
     if (searchQuery === previousQuery) {
       setMovies([...movies, ...slicedMovies])
     } else {
+      window.scrollTo(0, 0)
       setMovies(slicedMovies)
     }
 
