@@ -71,10 +71,7 @@ export default function Home() {
         <link rel="icon" href="/critics-picks-favicon.png" />
       </Head>
 
-      {/* <AppBar /> */}
       <AppBarHide loadSearch={loadSearch} />
-
-      {/* <UsingFetch /> */}
 
       <MovieGrid movies={movies} />
 
