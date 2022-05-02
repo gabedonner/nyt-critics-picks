@@ -20,9 +20,8 @@ export default function Home() {
       </Head>
 
       {/* <AppBar />
-
       <Offset /> */}
-      {/* <ScrollToTop /> */}
+
       <UsingFetch />
     </Container>
   )
