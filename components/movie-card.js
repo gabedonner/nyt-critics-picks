@@ -7,8 +7,8 @@ import { useInView } from 'react-intersection-observer'
 import { motion, useAnimation } from 'framer-motion'
 
 const MovieCard = ({ movieData }) => {
-  const controls = useAnimation()
   const [ref, inView] = useInView()
+  const controls = useAnimation()
   const cardAnimations = {
     hidden: { opacity: 0, y: 10, height: '100%' },
     visible: { opacity: 1, y: 0 },
