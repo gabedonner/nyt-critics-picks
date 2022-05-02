@@ -94,7 +94,7 @@ const MovieCard = ({ movieData }) => {
           <i>
             {movieData.summary_short.length > 200
               ? movieData.summary_short.substring(0, 200) + '...'
-              : movieData.summary_short}
+              : '"' + movieData.summary_short + '"'}
           </i>
           <p>{'- ' + movieData.byline}</p>
           <p>
