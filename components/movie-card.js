@@ -10,8 +10,8 @@ const MovieCard = ({ movieData }) => {
   //const [ref, inView] = useInView()
   //const controls = useAnimation()
   const cardAnimations = {
-    hidden: { opacity: 0, y: 5, height: '100%' },
-    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, height: '100%' },
+    visible: { opacity: 1 },
     tap: { scale: 0.98 },
   }
   const transition = { duration: 1, ease: [0.6, 0.01, -0.05, 0.9] }
@@ -48,16 +48,18 @@ const MovieCard = ({ movieData }) => {
         href={movieData.link.url}
         sx={{
           //boxShadow: 'rgba(0, 0, 0, 0.4) 0px 30px 90px;',
-          border: '.75px solid grey',
+          boxShadow: 'rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;',
+          //border: '.75px solid grey',
           display: 'block',
           width: '100%',
           height: '100%',
           borderRadius: 1,
           overflow: 'hidden',
-          //transition: 'all .5s',
+          transition: 'all .5s',
           //transitionTimingFunction: 'cubic-bezier(0.6, 0.01, -0.05, 0.9)',
           '&:hover': {
-            //backgroundColor: 'white',
+            backgroundColor: 'white',
+            boxShadow: 'rgba(0, 0, 0, 0.4) 0px 25px 50px -12px;',
             //boxShadow: 'rgba(0, 0, 0, 0.55) 0px 30px 90px;',
             // transform: 'scale(1.01)'
             //transform: 'translate(0, -2px);'
