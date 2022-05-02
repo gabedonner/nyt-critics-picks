@@ -28,7 +28,7 @@ const Search = styled('div')(({ theme }) => ({
   },
 }))
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
+const SearchIconWrapperButton = styled(IconButton)(({ theme }) => ({
   padding: theme.spacing(0, 2),
   height: '100%',
   position: 'absolute',
@@ -108,9 +108,20 @@ const HideAppBar = ({ props, loadSearch }) => {
               <i>NYT Critic&#39;s Picks</i>
             </Link>
             <Search>
-              <SearchIconWrapper>
+              <IconButton
+                onClick={() => loadSearch(query)}
+                sx={{
+                  padding: 1,
+                  height: '100%',
+                  zIndex: 1000,
+                  position: 'absolute',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
                 <SearchIcon />
-              </SearchIconWrapper>
+              </IconButton>
               <StyledInputBase
                 placeholder="Search…"
                 inputProps={{ 'aria-label': 'search' }}
