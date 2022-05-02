@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Button from '@mui/material/Button'
-import AppBar from '../components/hide-on-scroll-bar.js'
+import AppBar from '../components/app-bar.js'
 import MovieGrid from '../components/movie-grid.js'
 
 //lifting state:
