@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Box from '@mui/material/Box'
-import AppBar from '../components/app-bar.js'
-import { styled } from '@mui/material/styles'
 import Container from '@mui/material/Container'
 import Button from '@mui/material/Button'
 import AppBarHide from '../components/hide-on-scroll-bar.js'
@@ -12,8 +10,6 @@ import MovieGrid from '../components/movie-grid.js'
 
 //lifting state:
 //https://www.youtube.com/watch?v=rdwc4JmX_fU
-
-const Offset = styled('div')(({ theme }) => theme.mixins.toolbar)
 
 export default function Home() {
   const API_KEY = 'joZEGXraTg5TwCzoVbILHCL6F0e2C9vG'
@@ -77,7 +73,6 @@ export default function Home() {
 
       {/* <AppBar /> */}
       <AppBarHide loadSearch={loadSearch} />
-      {/* <Offset /> */}
 
       {/* <UsingFetch /> */}
 
