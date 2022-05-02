@@ -6,12 +6,9 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import CssBaseline from '@mui/material/CssBaseline'
 import useScrollTrigger from '@mui/material/useScrollTrigger'
-import Box from '@mui/material/Box'
-import Container from '@mui/material/Container'
 import Slide from '@mui/material/Slide'
 import IconButton from '@mui/material/IconButton'
 import InputBase from '@mui/material/InputBase'
-import MenuIcon from '@mui/icons-material/Menu'
 import SearchIcon from '@mui/icons-material/Search'
 
 const Search = styled('div')(({ theme }) => ({
