@@ -8,7 +8,7 @@ import { motion, useAnimation } from 'framer-motion'
 
 const MovieCard = ({ movieData }) => {
   //const [ref, inView] = useInView()
-  const controls = useAnimation()
+  //const controls = useAnimation()
   const cardAnimations = {
     hidden: { opacity: 0, y: 10, height: '100%' },
     visible: { opacity: 1, y: 0 },
@@ -38,7 +38,7 @@ const MovieCard = ({ movieData }) => {
       variants={cardAnimations}
       // ref={ref}
       initial="hidden"
-      animate={controls}
+      //animate={controls}
       transition={transition}
       whileTap="tap"
       whileInView="visible"
