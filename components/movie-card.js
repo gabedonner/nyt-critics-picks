@@ -16,6 +16,17 @@ const MovieCard = ({ movieData }) => {
   }
   const transition = { duration: 1, ease: [0.6, 0.01, -0.05, 0.9] }
 
+  const dateObject = new Date(movieData.opening_date)
+  const publicationDateObject = new Date(
+    movieData.publication_date.replace(/-/g, '/').replace(/T.+/, '')
+  )
+  const dateOptions = {
+    //weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }
+
   useEffect(() => {
     if (inView) {
       controls.start('visible')
@@ -73,13 +84,20 @@ const MovieCard = ({ movieData }) => {
               ? '[No title found]'
               : movieData.display_title}
           </h3>
+          {/* <p>
+            {'Opened: ' + dateObject.toLocaleDateString('en-US', dateOptions)}
+          </p>
+          <p>{'Opened: ' + movieData.opening_date}</p>
+          <p>{'Published: ' + movieData.publication_date}</p> */}
           <i>
             {movieData.summary_short.length > 200
               ? movieData.summary_short.substring(0, 200) + '...'
               : movieData.summary_short}
           </i>
           <p>{'- ' + movieData.byline}</p>
-          {/* <p>{movie.publication_date}</p> */}
+          <p>
+            {publicationDateObject.toLocaleDateString('en-US', dateOptions)}
+          </p>
           {/* <p>{index + 1}</p> */}
           {/* <a href={movie.link.url}>link to article &#8594;</a> */}
         </Box>
