@@ -105,7 +105,7 @@ const UsingFetch = () => {
 
   return (
     <section className={styles.mainSection}>
-      <Box
+      {/* <Box
         sx={{
           display: 'flex',
           alignItems: 'center',
@@ -163,7 +163,7 @@ const UsingFetch = () => {
             <SearchIcon />
           </IconButton>
         </Box>
-      </Box>
+      </Box> */}
 
       <Grid
         container
