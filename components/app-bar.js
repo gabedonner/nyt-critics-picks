@@ -83,7 +83,7 @@ const HideAppBar = ({ props, loadSearch }) => {
             px: '2vw',
           }}
         >
-          <Toolbar>
+          <Toolbar sx={{ justifyContent: 'space-between' }}>
             {/* <Typography
               variant="h6"
               noWrap
@@ -101,7 +101,7 @@ const HideAppBar = ({ props, loadSearch }) => {
                 color: '#666',
                 fontSize: [18],
                 fontWeight: 700,
-                flexGrow: 1,
+                flexGrow: 'auto',
                 display: { xs: 'block', sm: 'block' },
               }}
             >
