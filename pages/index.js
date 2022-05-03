@@ -35,7 +35,7 @@ export default function Home() {
     setHasMore(data.has_more)
     console.log('has more: ' + data.has_more)
     console.log('has more: ' + hasMore)
-    let slicedMovies = data.results.slice(0, 12)
+    let slicedMovies = data.results.slice(0, 18)
 
     if (searchQuery === previousQuery) {
       setMovies([...movies, ...slicedMovies])
@@ -56,7 +56,7 @@ export default function Home() {
   }, [offsetNum, searchQuery])
 
   const loadMore = (offsetNum) => {
-    setOffsetNum(offsetNum + 12)
+    setOffsetNum(offsetNum + 18)
   }
 
   const loadSearch = (query) => {
