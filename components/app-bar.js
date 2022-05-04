@@ -111,7 +111,8 @@ const HideAppBar = ({ props, loadSearch }) => {
                 sx={{
                   display: 'inline-block',
                   position: 'absolute',
-                  bottom: [4, 8.5],
+                  bottom: [4, 9],
+                  opacity: 0.9,
                 }}
               >
                 <Image
@@ -131,6 +132,7 @@ const HideAppBar = ({ props, loadSearch }) => {
                   pl: 1,
                   ml: 5,
                   display: { xs: 'none', sm: 'block' },
+                  fontFamily: 'Times New Roman',
                 }}
               >
                 NYT Critic&#39;s Picks
