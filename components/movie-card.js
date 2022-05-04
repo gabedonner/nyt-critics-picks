@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Image from 'next/image'
 import Box from '@mui/material/Box'
 import Link from '@mui/material/Link'
+import Typography from '@mui/material/Typography'
 // import LinkIcon from '@mui/icons-material/Link'
 import { motion, useAnimation } from 'framer-motion'
 
@@ -46,7 +47,7 @@ const MovieCard = ({ movieData }) => {
           display: 'block',
           width: '100%',
           height: '100%',
-          borderRadius: 1,
+          borderRadius: 2,
           overflow: 'hidden',
           transition: 'all .5s',
           //transitionTimingFunction: 'cubic-bezier(0.6, 0.01, -0.05, 0.9)',
@@ -76,20 +77,22 @@ const MovieCard = ({ movieData }) => {
           // sx={{ imageRendering: 'crisp-edges' }}
         />
         <Box sx={{ px: 2, pb: 2 }}>
-          <h3>
+          <Typography variant="h6" fontWeight="bold" sx={{ pt: 1.5 }}>
             {movieData.display_title === ''
               ? '[No title found]'
               : movieData.display_title}
-          </h3>
-          <i>
+          </Typography>
+          <Typography sx={{ fontSize: 14 }}>
+            {publicationDateObject.toLocaleDateString('en-US', dateOptions)}
+          </Typography>
+          <Typography sx={{ fontSize: 16, pt: 2, fontStyle: 'italic' }}>
             {movieData.summary_short.length > 200
               ? movieData.summary_short.substring(0, 200) + '...'
               : '"' + movieData.summary_short + '"'}
-          </i>
-          <p>{'- ' + movieData.byline}</p>
-          <p>
-            {publicationDateObject.toLocaleDateString('en-US', dateOptions)}
-          </p>
+          </Typography>
+          <Typography sx={{ pt: 2, pb: 2, fontWeight: 500 }}>
+            {'- ' + movieData.byline}
+          </Typography>
         </Box>
       </Link>
     </motion.div>
