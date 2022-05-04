@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Box from '@mui/material/Box'
 import Link from '@mui/material/Link'
 // import LinkIcon from '@mui/icons-material/Link'
-//import { useInView } from 'react-intersection-observer'
 import { motion, useAnimation } from 'framer-motion'
 
 const MovieCard = ({ movieData }) => {
@@ -26,12 +25,6 @@ const MovieCard = ({ movieData }) => {
     month: 'long',
     day: 'numeric',
   }
-
-  // useEffect(() => {
-  //   if (inView) {
-  //     controls.start('visible')
-  //   }
-  // }, [controls, inView])
 
   return (
     <motion.div
@@ -88,11 +81,6 @@ const MovieCard = ({ movieData }) => {
               ? '[No title found]'
               : movieData.display_title}
           </h3>
-          {/* <p>
-            {'Opened: ' + dateObject.toLocaleDateString('en-US', dateOptions)}
-          </p>
-          <p>{'Opened: ' + movieData.opening_date}</p>
-          <p>{'Published: ' + movieData.publication_date}</p> */}
           <i>
             {movieData.summary_short.length > 200
               ? movieData.summary_short.substring(0, 200) + '...'
@@ -102,8 +90,6 @@ const MovieCard = ({ movieData }) => {
           <p>
             {publicationDateObject.toLocaleDateString('en-US', dateOptions)}
           </p>
-          {/* <p>{index + 1}</p> */}
-          {/* <a href={movie.link.url}>link to article &#8594;</a> */}
         </Box>
       </Link>
     </motion.div>
