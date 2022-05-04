@@ -12,7 +12,7 @@ import MovieCard from '../components/movie-card.js'
 //https://www.youtube.com/watch?v=rdwc4JmX_fU
 
 export default function Home() {
-  const API_KEY = 'joZEGXraTg5TwCzoVbILHCL6F0e2C9vG'
+  const API_KEY = process.env.NEXT_PUBLIC_API_KEY
 
   const [movies, setMovies] = useState([])
   const [loading, setLoading] = useState(false)
