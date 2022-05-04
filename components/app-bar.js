@@ -115,7 +115,7 @@ const HideAppBar = ({ props, loadSearch }) => {
                 }}
               >
                 <Image
-                  src={'/critics-picks-favicon.png'}
+                  src={'/critics-picks-brand-icon.png'}
                   alt={'link to home'}
                   width={35}
                   height={35}
@@ -126,7 +126,7 @@ const HideAppBar = ({ props, loadSearch }) => {
                 variant="h6"
                 sx={{
                   fontStyle: 'italic',
-                  fontWeight: 'bold',
+                  fontWeight: '600',
                   display: 'inline-block',
                   pl: 1,
                   ml: 5,
