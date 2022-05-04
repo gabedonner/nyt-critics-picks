@@ -79,8 +79,8 @@ const HideAppBar = ({ props, loadSearch }) => {
           position="fixed"
           color="background"
           sx={{
-            boxShadow: 'none',
-            borderBottom: '1px solid #DFDFDF',
+            boxShadow: 'rgba(0, 0, 0, 0.10) 0px 0px 25px 0px',
+            //borderBottom: '1px solid #DFDFDF',
             py: 1.25,
             px: '2vw',
           }}
