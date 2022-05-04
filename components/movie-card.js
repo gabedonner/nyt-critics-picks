@@ -85,7 +85,7 @@ const MovieCard = ({ movieData }) => {
           <Typography sx={{ fontSize: 14 }}>
             {publicationDateObject.toLocaleDateString('en-US', dateOptions)}
           </Typography>
-          <Typography sx={{ fontSize: 16, pt: 2, fontStyle: 'italic' }}>
+          <Typography sx={{ fontSize: 16, pt: 2, fontStyle: 'normal' }}>
             {movieData.summary_short.length > 200
               ? movieData.summary_short.substring(0, 200) + '...'
               : '"' + movieData.summary_short + '"'}
