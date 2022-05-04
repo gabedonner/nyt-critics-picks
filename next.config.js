@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     domains: ['static01.nyt.com', 'reqres.in'],
   },
+  env: {
+    API_KEY: process.env.NEXT_PUBLIC_API_KEY,
+  },
 }
 
 module.exports = nextConfig
