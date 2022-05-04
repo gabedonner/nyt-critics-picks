@@ -11,6 +11,8 @@ import IconButton from '@mui/material/IconButton'
 import InputBase from '@mui/material/InputBase'
 import SearchIcon from '@mui/icons-material/Search'
 import Link from '@mui/material/Link'
+import Image from 'next/image'
+import Box from '@mui/material/Box'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -105,7 +107,34 @@ const HideAppBar = ({ props, loadSearch }) => {
                 display: { xs: 'block', sm: 'block' },
               }}
             >
-              <i>NYT Critic&#39;s Picks</i>
+              <Box
+                sx={{
+                  display: 'inline-block',
+                  position: 'absolute',
+                  bottom: [4, 9],
+                }}
+              >
+                <Image
+                  src={'/critics-picks-favicon.png'}
+                  alt={'link to home'}
+                  width={35}
+                  height={35}
+                  // sx={{ imageRendering: 'crisp-edges' }}
+                />
+              </Box>
+              <Typography
+                variant="h6"
+                sx={{
+                  fontStyle: 'italic',
+                  fontWeight: 'bold',
+                  display: 'inline-block',
+                  pl: 1,
+                  ml: 5,
+                  display: { xs: 'none', sm: 'block' },
+                }}
+              >
+                NYT Critic&#39;s Picks
+              </Typography>
             </Link>
             <Search>
               <IconButton
