@@ -111,7 +111,7 @@ const HideAppBar = ({ props, loadSearch }) => {
                 sx={{
                   display: 'inline-block',
                   position: 'absolute',
-                  bottom: [4, 9],
+                  bottom: [4, 8.5],
                 }}
               >
                 <Image
