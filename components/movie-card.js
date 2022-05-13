@@ -5,18 +5,6 @@ import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 import LaunchIcon from '@mui/icons-material/Launch'
 import { motion, useAnimation } from 'framer-motion'
-//import { FiExternalLinkIcon } from 'react-icons/fi'
-
-class Question extends React.Component {
-  render() {
-    return (
-      <h3>
-        {' '}
-        Lets go for a <FiExternalLinkIcon />?{' '}
-      </h3>
-    )
-  }
-}
 
 const MovieCard = ({ movieData }) => {
   //const [ref, inView] = useInView()
