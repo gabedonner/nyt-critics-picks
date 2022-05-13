@@ -36,7 +36,7 @@ const MovieCard = ({ movieData }) => {
       transition={transition}
       whileTap="tap"
       whileInView="visible"
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: '-75px' }}
     >
       <Link
         href={movieData.link.url}
