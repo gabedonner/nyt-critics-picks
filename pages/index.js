@@ -11,6 +11,9 @@ import MovieCard from '../components/movie-card.js'
 //lifting state:
 //https://www.youtube.com/watch?v=rdwc4JmX_fU
 
+//fixing useEffect warnings
+//https://daveceddia.com/useeffect-hook-examples/#how-to-fix-the-warnings-dont-ignore-the-warnings
+
 export default function Home() {
   const API_KEY = process.env.NEXT_PUBLIC_API_KEY
 
