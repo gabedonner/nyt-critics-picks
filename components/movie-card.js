@@ -3,8 +3,20 @@ import Image from 'next/image'
 import Box from '@mui/material/Box'
 import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
-// import LinkIcon from '@mui/icons-material/Link'
+import LaunchIcon from '@mui/icons-material/Launch'
 import { motion, useAnimation } from 'framer-motion'
+//import { FiExternalLinkIcon } from 'react-icons/fi'
+
+class Question extends React.Component {
+  render() {
+    return (
+      <h3>
+        {' '}
+        Lets go for a <FiExternalLinkIcon />?{' '}
+      </h3>
+    )
+  }
+}
 
 const MovieCard = ({ movieData }) => {
   //const [ref, inView] = useInView()
@@ -50,6 +62,7 @@ const MovieCard = ({ movieData }) => {
           borderRadius: 2,
           overflow: 'hidden',
           transition: 'all .5s',
+          position: 'relative',
           //transitionTimingFunction: 'cubic-bezier(0.6, 0.01, -0.05, 0.9)',
           '&:hover': {
             backgroundColor: 'white',
@@ -65,6 +78,16 @@ const MovieCard = ({ movieData }) => {
         target="_blank"
         rel="noopener noreferrer"
       >
+        <LaunchIcon
+          sx={{
+            color: 'white',
+            zIndex: '999',
+            position: 'absolute',
+            right: 12,
+            top: 12,
+            opacity: 0.5,
+          }}
+        />
         <Image
           src={
             movieData.multimedia === null
