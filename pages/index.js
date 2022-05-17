@@ -44,6 +44,7 @@ export default function Home() {
       setMovies([...movies, ...slicedMovies])
     } else {
       window.scrollTo(0, 0)
+      setMovies([])
       setMovies(slicedMovies)
     }
 
