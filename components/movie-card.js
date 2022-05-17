@@ -79,7 +79,7 @@ const MovieCard = ({ movieData }) => {
         <Image
           src={
             movieData.multimedia === null
-              ? '/vercel.svg'
+              ? '/no-image-found.png'
               : movieData.multimedia.src
           }
           alt={movieData.display_title}
